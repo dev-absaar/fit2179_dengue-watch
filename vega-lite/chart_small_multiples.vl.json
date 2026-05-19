@@ -2,29 +2,66 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Monthly Dengue Patterns by State (2010)",
-    "subtitle": "Each state has a different seasonal peak — one control strategy does not fit all",
-    "fontSize": 15, "subtitleFontSize": 12, "subtitleColor": "#6B6B6B", "anchor": "start"
+    "subtitle": "Each state peaks at a different month — one control strategy does not fit all",
+    "fontSize": 15,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#6B6B6B",
+    "anchor": "start"
   },
   "data": {"url": "data/dengue_small_multiples.csv"},
   "facet": {
-    "field": "state", "type": "nominal", "columns": 3,
-    "header": {"title": null, "labelFontSize": 12, "labelFontWeight": "bold", "labelColor": "#424242"}
+    "field": "state",
+    "type": "nominal",
+    "columns": 5,
+    "header": {
+      "title": null,
+      "labelFontSize": 13,
+      "labelFontWeight": "bold",
+      "labelColor": "#424242",
+      "labelPadding": 8
+    }
   },
   "spec": {
-    "width": 200,
-    "height": 110,
-    "mark": {"type": "area", "color": "#F4A261", "line": {"color": "#B84203", "strokeWidth": 1.5}, "opacity": 0.6},
+    "width": 140,
+    "height": 140,
+    "mark": {
+      "type": "area",
+      "color": "#F4A261",
+      "line": {"color": "#B84203", "strokeWidth": 2},
+      "opacity": 0.55
+    },
     "encoding": {
       "x": {
-        "field": "month_num", "type": "ordinal", "title": null,
-        "axis": {"values": [1,4,7,10], "labelExpr": "['Jan','Apr','Jul','Oct'][datum.value - 1]", "labelFontSize": 9}
+        "field": "month_num",
+        "type": "ordinal",
+        "title": null,
+        "axis": {
+          "values": [1, 3, 5, 7, 9, 11],
+          "labelExpr": "['J','F','M','A','M','J','J','A','S','O','N','D'][datum.value - 1]",
+          "labelFontSize": 10,
+          "grid": false,
+          "ticks": true
+        }
       },
-      "y": {"field": "cases", "type": "quantitative", "title": null, "axis": {"labelFontSize": 9, "tickCount": 3}},
+      "y": {
+        "field": "cases",
+        "type": "quantitative",
+        "title": "Cases",
+        "axis": {
+          "labelFontSize": 9,
+          "tickCount": 3,
+          "grid": true,
+          "titleFontSize": 9
+        }
+      },
       "tooltip": [
         {"field": "state", "type": "nominal", "title": "State"},
         {"field": "month", "type": "nominal", "title": "Month"},
         {"field": "cases", "type": "quantitative", "title": "Cases", "format": ","}
       ]
     }
+  },
+  "config": {
+    "facet": {"spacing": 16}
   }
 }
