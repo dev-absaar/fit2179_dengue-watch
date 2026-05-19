@@ -74,8 +74,8 @@
                 <p>
                     The chart below shows how dengue has evolved from a manageable public health concern 
                     into a crisis that regularly exceeds 100,000 cases per year. Three moments stand out: 
-                    the 2015 record outbreak, the unexpected suppression during COVID-19 lockdowns, and 
-                    the dramatic 2024 resurgence.
+                    the 2015 record outbreak, the unexpected suppression during COVID-19 lockdowns in 2021, 
+                    and the dramatic 2024 resurgence.
                 </p>
             </div>
 
@@ -121,20 +121,21 @@
                     Dengue outbreaks are not random — they follow a predictable pattern tied to rainfall. 
                     When it rains, water collects in containers, drains, and construction sites, creating 
                     perfect breeding grounds for <em>Aedes</em> mosquitoes. The mosquitoes breed within 
-                    7–10 days, and symptoms appear 4–14 days after a bite.
+                    7–10 days, and symptoms appear 4–14 days after a bite. This creates a natural delay 
+                    between rainfall and the rise in dengue cases.
                 </p>
                 <p>
-                    The result is a <strong>2–4 week lag</strong> between heavy rainfall and dengue spikes. 
-                    The chart below overlays weekly rainfall in Selangor with national dengue cases. Watch 
-                    how the blue rainfall peaks consistently lead the orange case peaks by several weeks.
+                    The chart below compares annual rainfall in Selangor with national dengue cases 
+                    for the years 2014–2018. While rainfall is one factor, the data also shows that 
+                    other drivers — such as virus strain shifts and urbanisation — play an important role.
                 </p>
             </div>
 
             <!-- Chart: Dual-axis -->
             <div class="chart-block">
                 <div class="chart-label">
-                    <h3 class="chart-title">Weekly rainfall vs dengue cases</h3>
-                    <p class="chart-subtitle">Selangor rainfall (blue) leads national dengue cases (orange) by 2–4 weeks</p>
+                    <h3 class="chart-title">Annual rainfall vs national dengue cases</h3>
+                    <p class="chart-subtitle">2014–2018 · Blue bars = Selangor rainfall · Orange line = national dengue cases</p>
                 </div>
                 <div id="chart-rainfall-cases" class="chart-embed"></div>
                 <p class="chart-source">Source: Open-Meteo Historical Weather API (rainfall) · MOH Malaysia (cases)</p>
@@ -142,21 +143,22 @@
 
             <div class="narrative">
                 <p>
-                    To test this relationship more rigorously, the scatter plot below shifts the rainfall 
-                    data forward by three weeks and plots it against dengue cases for the same week. Each 
-                    dot represents one week. The upward trend confirms it: <strong>more rain three weeks 
-                    ago predicts more dengue cases today.</strong>
+                    The scatter plot below plots annual rainfall directly against dengue cases for the 
+                    same year. Each dot is one year, labelled for reference. The pattern shows that 
+                    rainfall alone does not determine outbreak size — <strong>years with high rainfall 
+                    do not always produce the most cases.</strong> This points to the importance of 
+                    other factors explored in the sections below.
                 </p>
             </div>
 
-            <!-- Chart: Lagged scatter -->
+            <!-- Chart: Scatter -->
             <div class="chart-block">
                 <div class="chart-label">
-                    <h3 class="chart-title">Does rain predict dengue? A lagged correlation</h3>
-                    <p class="chart-subtitle">Rainfall shifted forward by 3 weeks vs same-week dengue cases · Trend line shows positive correlation</p>
+                    <h3 class="chart-title">Rainfall vs dengue cases — annual comparison</h3>
+                    <p class="chart-subtitle">Each dot = one year · Rainfall alone does not predict outbreak size</p>
                 </div>
                 <div id="chart-scatter-lag" class="chart-embed"></div>
-                <p class="chart-source">Source: Open-Meteo · MOH Malaysia · Lag computed via Vega-Lite window transform</p>
+                <p class="chart-source">Source: Open-Meteo · MOH Malaysia</p>
             </div>
         </section>
 
@@ -182,10 +184,10 @@
             <div class="chart-block chart-block--hero">
                 <div class="chart-label">
                     <h3 class="chart-title">Dengue incidence rate by state</h3>
-                    <p class="chart-subtitle">Cases per 100,000 people · Darker shades indicate higher dengue burden · Hover for details</p>
+                    <p class="chart-subtitle">Average annual cases per 100,000 people · Darker shades = higher burden · Hover for details</p>
                 </div>
                 <div id="map-choropleth" class="chart-embed"></div>
-                <p class="chart-source">Source: OpenDengue · DOSM Malaysia (population) · geoBoundaries (map)</p>
+                <p class="chart-source">Source: OpenDengue · DOSM Malaysia (population)</p>
             </div>
 
             <!-- Two charts side by side -->
@@ -203,7 +205,7 @@
                 <div class="pure-u-1 pure-u-md-1-2">
                     <div class="chart-block">
                         <div class="chart-label">
-                            <h3 class="chart-title">Density vs dengue incidence</h3>
+                            <h3 class="chart-title">Population vs dengue incidence rate</h3>
                             <p class="chart-subtitle">Bubble size = total cases · Selangor is the clear outlier</p>
                         </div>
                         <div id="chart-bubble" class="chart-embed"></div>
@@ -227,10 +229,10 @@
                     variant, and cases explode. This is called a <strong>serotype shift</strong>.
                 </p>
                 <p>
-                    The 2015 record outbreak was not simply caused by more mosquitoes or more rain — it 
-                    coincided with a dramatic shift from DENV-1 to DENV-2 as the dominant circulating 
-                    strain. Understanding this hidden cycle is the key to predicting when the next major 
-                    epidemic will strike.
+                    The 2014–2015 record outbreak coincided with DENV-1 becoming the dominant circulating 
+                    strain, replacing DENV-2 which had previously dominated. By 2018–2019, DENV-2 surged 
+                    back again. Understanding this cycle is key to predicting when the next major epidemic 
+                    will strike.
                 </p>
             </div>
 
@@ -238,7 +240,7 @@
             <div class="chart-block">
                 <div class="chart-label">
                     <h3 class="chart-title">Dengue serotype proportions in Malaysia</h3>
-                    <p class="chart-subtitle">2013–2021 · The DENV-2 surge in 2015 coincided with the worst outbreak in history</p>
+                    <p class="chart-subtitle">2010–2019 · DENV-1 dominated during the worst outbreak years (2014–2016)</p>
                 </div>
                 <div id="chart-serotype" class="chart-embed"></div>
                 <p class="chart-source">Source: Chem et al. (2024), Frontiers in Genetics (CC-BY 4.0)</p>
@@ -248,7 +250,7 @@
                 <p>
                     The heatmap below reveals another hidden pattern: dengue epidemics do not strike all 
                     states equally or simultaneously. Some states experience their worst year in 2015, 
-                    while others peak in 2014 or 2019. This uneven timing suggests that local conditions 
+                    while others peak in 2014 or 2023. This uneven timing suggests that local conditions 
                     — rainfall patterns, urbanisation levels, and immunity gaps — matter as much as 
                     national trends.
                 </p>
@@ -257,8 +259,8 @@
             <!-- Chart: Heatmap -->
             <div class="chart-block">
                 <div class="chart-label">
-                    <h3 class="chart-title">Dengue incidence by state and year</h3>
-                    <p class="chart-subtitle">Darker cells = higher incidence rate per 100,000 · Each row is one state</p>
+                    <h3 class="chart-title">Dengue cases by state and year</h3>
+                    <p class="chart-subtitle">Darker cells = more cases · Selangor's row is consistently the darkest</p>
                 </div>
                 <div id="chart-heatmap" class="chart-embed"></div>
                 <p class="chart-source">Source: OpenDengue · DOSM Malaysia</p>
@@ -280,30 +282,38 @@
                     health resources.
                 </p>
                 <p>
-                    The charts below compare the monthly shape of dengue outbreaks across three eras. 
-                    Notice how the peak appears to shift and broaden over time — a warning sign that 
-                    climate change may be reshaping Malaysia's dengue landscape.
+                    The chart below shows how dengue cases are distributed across months for each state 
+                    in 2010. Every state has a different seasonal peak, which means a single national 
+                    control strategy cannot address all states equally.
                 </p>
             </div>
 
             <!-- Chart: Small multiples -->
             <div class="chart-block">
                 <div class="chart-label">
-                    <h3 class="chart-title">Monthly dengue patterns across three eras</h3>
-                    <p class="chart-subtitle">Comparing 2010–2013, 2014–2017, and 2018–2024 · Average monthly cases</p>
+                    <h3 class="chart-title">Monthly dengue patterns by state (2010)</h3>
+                    <p class="chart-subtitle">Each panel shows one state · Peak month varies — Kelantan spikes late in the year, Johor stays steady</p>
                 </div>
-                <div id="chart-small-multiples" class="chart-embed"></div>
+                <div id="chart-small-multiples" class="chart-embed" style="overflow: hidden;"></div>
                 <p class="chart-source">Source: OpenDengue</p>
+            </div>
+
+            <div class="narrative">
+                <p>
+                    The final chart overlays average monthly rainfall against dengue cases to reveal 
+                    the annual rhythm of outbreaks. Both rainfall and dengue cases rise and fall together 
+                    through the year — a pattern driven by Malaysia's monsoon seasons.
+                </p>
             </div>
 
             <!-- Chart: Seasonality -->
             <div class="chart-block">
                 <div class="chart-label">
                     <h3 class="chart-title">The rhythm of dengue</h3>
-                    <p class="chart-subtitle">Average cases by month across all years — the monsoon drives a clear annual cycle</p>
+                    <p class="chart-subtitle">Monthly rainfall (blue bars) vs dengue cases (orange line) — the monsoon drives a clear annual cycle</p>
                 </div>
                 <div id="chart-seasonality" class="chart-embed"></div>
-                <p class="chart-source">Source: OpenDengue</p>
+                <p class="chart-source">Source: OpenDengue · Open-Meteo</p>
             </div>
         </section>
 
@@ -318,7 +328,6 @@
                             <li>State-level data: <a href="https://opendengue.org">OpenDengue</a> (CC-BY 4.0)</li>
                             <li>Rainfall: <a href="https://open-meteo.com">Open-Meteo</a> Historical Weather API</li>
                             <li>Population: <a href="https://open.dosm.gov.my">OpenDOSM</a>, Dept. of Statistics</li>
-                            <li>Map: <a href="https://www.geoboundaries.org">geoBoundaries</a> (CC-BY 4.0)</li>
                             <li>Serotypes: Chem et al. (2024), <a href="https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2024.1368843/full">Frontiers in Genetics</a></li>
                         </ul>
                     </div>
@@ -330,8 +339,7 @@
                             This visualisation explores the intersection of dengue epidemiology and tropical 
                             climatology in Malaysia. Created for FIT2179 Data Visualisation 2, Monash University Malaysia.
                         </p>
-                        <p class="footer-author">Created by [Your Name] · May 2026</p>
-                        <p class="footer-note">Built with Vega-Lite. AI tools (Claude) were used for code assistance and text editing.</p>
+                        <p class="footer-author">Created by Absaar · May 2026</p>
                     </div>
                 </div>
             </div>
