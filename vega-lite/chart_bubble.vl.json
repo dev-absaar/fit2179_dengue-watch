@@ -2,15 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": 340,
-  "title": {
-    "text": "Who Bears the Burden? Population vs. Dengue Rate",
-    "subtitle": "Bubble size = total cases. Selangor is large AND high-rate — a double burden.",
-    "fontSize": 15,
-    "subtitleFontSize": 12,
-    "subtitleColor": "#6B6B6B",
-    "anchor": "start",
-    "font": "DM Serif Display"
-  },
   "data": {
     "url": "data/dengue_bubble.csv"
   },
@@ -22,7 +13,7 @@
       "mark": {
         "type": "point",
         "filled": true,
-        "opacity": 0.75,
+        "opacity": 0.8,
         "stroke": "white",
         "strokeWidth": 1.5
       },
@@ -43,8 +34,8 @@
         "size": {
           "field": "total_cases",
           "type": "quantitative",
-          "title": "Total Cases",
-          "scale": {"range": [80, 3000]}
+          "scale": {"range": [80, 3000]},
+          "legend": null
         },
         "color": {
           "field": "incidence_per100k",
