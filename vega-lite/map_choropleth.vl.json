@@ -2,583 +2,552 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": 420,
-  "data": {
-    "values": [
-      {
-        "type": "Feature",
-        "properties": {
-          "state": "Perlis",
-          "total_cases": 2652,
-          "avg_annual_rate": 130.5
-        },
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                100.09,
-                6.72
-              ],
-              [
-                100.52,
-                6.72
-              ],
-              [
-                100.52,
-                6.38
-              ],
-              [
-                100.09,
-                6.38
-              ],
-              [
-                100.09,
-                6.72
-              ]
-            ]
-          ]
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "state": "Kedah",
-          "total_cases": 14001,
-          "avg_annual_rate": 87.7
-        },
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                100.09,
-                6.38
-              ],
-              [
-                100.85,
-                6.38
-              ],
-              [
-                100.85,
-                5.55
-              ],
-              [
-                100.3,
-                5.55
-              ],
-              [
-                100.09,
-                5.85
-              ],
-              [
-                100.09,
-                6.38
-              ]
-            ]
-          ]
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "state": "Pulau Pinang",
-          "total_cases": 26851,
-          "avg_annual_rate": 205.9
-        },
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                100.16,
-                5.52
-              ],
-              [
-                100.48,
-                5.52
-              ],
-              [
-                100.48,
-                5.2
-              ],
-              [
-                100.16,
-                5.2
-              ],
-              [
-                100.16,
-                5.52
-              ]
-            ]
-          ]
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "state": "Perak",
-          "total_cases": 44040,
-          "avg_annual_rate": 207.8
-        },
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                100.3,
-                5.55
-              ],
-              [
-                101.55,
-                5.55
-              ],
-              [
-                101.55,
-                4.0
-              ],
-              [
-                100.85,
-                3.9
-              ],
-              [
-                100.3,
-                4.5
-              ],
-              [
-                100.3,
-                5.55
-              ]
-            ]
-          ]
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "state": "Kelantan",
-          "total_cases": 38299,
-          "avg_annual_rate": 289.6
-        },
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                101.55,
-                6.25
-              ],
-              [
-                102.55,
-                6.25
-              ],
-              [
-                102.55,
-                5.5
-              ],
-              [
-                101.8,
-                5.2
-              ],
-              [
-                101.55,
-                5.5
-              ],
-              [
-                101.55,
-                6.25
-              ]
-            ]
-          ]
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "state": "Terengganu",
-          "total_cases": 9499,
-          "avg_annual_rate": 110.7
-        },
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                102.55,
-                5.5
-              ],
-              [
-                103.5,
-                5.5
-              ],
-              [
-                103.5,
-                4.5
-              ],
-              [
-                102.55,
-                4.0
-              ],
-              [
-                102.05,
-                4.5
-              ],
-              [
-                102.55,
-                5.5
-              ]
-            ]
-          ]
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "state": "Pahang",
-          "total_cases": 17158,
-          "avg_annual_rate": 143.9
-        },
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                101.55,
-                4.0
-              ],
-              [
-                102.55,
-                4.0
-              ],
-              [
-                103.5,
-                4.5
-              ],
-              [
-                103.5,
-                2.9
-              ],
-              [
-                102.8,
-                2.7
-              ],
-              [
-                101.55,
-                3.2
-              ],
-              [
-                101.55,
-                4.0
-              ]
-            ]
-          ]
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "state": "Selangor",
-          "total_cases": 377889,
-          "avg_annual_rate": 954.4
-        },
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                100.85,
-                3.9
-              ],
-              [
-                101.55,
-                3.9
-              ],
-              [
-                101.55,
-                3.2
-              ],
-              [
-                101.2,
-                2.9
-              ],
-              [
-                100.85,
-                3.1
-              ],
-              [
-                100.85,
-                3.9
-              ]
-            ]
-          ]
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "state": "Kuala Lumpur",
-          "total_cases": 51507,
-          "avg_annual_rate": 200.0
-        },
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                101.55,
-                3.3
-              ],
-              [
-                101.75,
-                3.3
-              ],
-              [
-                101.75,
-                3.1
-              ],
-              [
-                101.55,
-                3.1
-              ],
-              [
-                101.55,
-                3.3
-              ]
-            ]
-          ]
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "state": "Negeri Sembilan",
-          "total_cases": 24318,
-          "avg_annual_rate": 289.4
-        },
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                101.55,
-                3.2
-              ],
-              [
-                102.2,
-                3.2
-              ],
-              [
-                102.2,
-                2.6
-              ],
-              [
-                101.7,
-                2.55
-              ],
-              [
-                101.2,
-                2.9
-              ],
-              [
-                101.55,
-                3.2
-              ]
-            ]
-          ]
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "state": "Melaka",
-          "total_cases": 14063,
-          "avg_annual_rate": 210.7
-        },
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                101.7,
-                2.55
-              ],
-              [
-                102.35,
-                2.55
-              ],
-              [
-                102.35,
-                2.1
-              ],
-              [
-                101.9,
-                2.1
-              ],
-              [
-                101.7,
-                2.55
-              ]
-            ]
-          ]
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "state": "Johor",
-          "total_cases": 71832,
-          "avg_annual_rate": 271.8
-        },
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                102.2,
-                2.6
-              ],
-              [
-                103.5,
-                2.9
-              ],
-              [
-                104.35,
-                1.9
-              ],
-              [
-                103.5,
-                1.25
-              ],
-              [
-                102.2,
-                1.8
-              ],
-              [
-                102.2,
-                2.6
-              ]
-            ]
-          ]
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "state": "Sarawak",
-          "total_cases": 18287,
-          "avg_annual_rate": 93.6
-        },
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                109.6,
-                4.6
-              ],
-              [
-                115.6,
-                4.6
-              ],
-              [
-                115.6,
-                1.0
-              ],
-              [
-                109.6,
-                1.0
-              ],
-              [
-                109.6,
-                4.6
-              ]
-            ]
-          ]
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "state": "Sabah",
-          "total_cases": 24020,
-          "avg_annual_rate": 103.4
-        },
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                115.6,
-                7.4
-              ],
-              [
-                119.3,
-                7.4
-              ],
-              [
-                119.3,
-                4.6
-              ],
-              [
-                115.6,
-                4.6
-              ],
-              [
-                115.6,
-                7.4
-              ]
-            ]
-          ]
-        }
-      }
-    ],
-    "format": {
-      "type": "json",
-      "property": "features"
-    }
-  },
   "projection": {
     "type": "mercator"
   },
-  "mark": {
-    "type": "geoshape",
-    "stroke": "white",
-    "strokeWidth": 1.5
-  },
-  "encoding": {
-    "color": {
-      "field": "properties.avg_annual_rate",
-      "type": "quantitative",
-      "title": "Rate per 100k/yr",
-      "scale": {
-        "scheme": "orangered",
-        "domain": [
-          0,
-          450
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {
+            "type": "Feature",
+            "properties": {
+              "state": "Perlis",
+              "rate": 130.5,
+              "cases": 2652
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    100.09,
+                    6.72
+                  ],
+                  [
+                    100.52,
+                    6.72
+                  ],
+                  [
+                    100.52,
+                    6.38
+                  ],
+                  [
+                    100.09,
+                    6.38
+                  ],
+                  [
+                    100.09,
+                    6.72
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "state": "Kedah",
+              "rate": 87.7,
+              "cases": 14001
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    100.09,
+                    6.38
+                  ],
+                  [
+                    100.85,
+                    6.38
+                  ],
+                  [
+                    100.85,
+                    5.55
+                  ],
+                  [
+                    100.3,
+                    5.55
+                  ],
+                  [
+                    100.09,
+                    5.85
+                  ],
+                  [
+                    100.09,
+                    6.38
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "state": "Pulau Pinang",
+              "rate": 205.9,
+              "cases": 26851
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    100.16,
+                    5.52
+                  ],
+                  [
+                    100.48,
+                    5.52
+                  ],
+                  [
+                    100.48,
+                    5.2
+                  ],
+                  [
+                    100.16,
+                    5.2
+                  ],
+                  [
+                    100.16,
+                    5.52
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "state": "Perak",
+              "rate": 207.8,
+              "cases": 44040
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    100.3,
+                    5.55
+                  ],
+                  [
+                    101.55,
+                    5.55
+                  ],
+                  [
+                    101.55,
+                    4.0
+                  ],
+                  [
+                    100.85,
+                    3.9
+                  ],
+                  [
+                    100.3,
+                    4.5
+                  ],
+                  [
+                    100.3,
+                    5.55
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "state": "Kelantan",
+              "rate": 289.6,
+              "cases": 38299
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    101.55,
+                    6.25
+                  ],
+                  [
+                    102.55,
+                    6.25
+                  ],
+                  [
+                    102.55,
+                    5.5
+                  ],
+                  [
+                    101.8,
+                    5.2
+                  ],
+                  [
+                    101.55,
+                    5.5
+                  ],
+                  [
+                    101.55,
+                    6.25
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "state": "Terengganu",
+              "rate": 110.7,
+              "cases": 9499
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    102.55,
+                    5.5
+                  ],
+                  [
+                    103.5,
+                    5.5
+                  ],
+                  [
+                    103.5,
+                    4.5
+                  ],
+                  [
+                    102.55,
+                    4.0
+                  ],
+                  [
+                    102.05,
+                    4.5
+                  ],
+                  [
+                    102.55,
+                    5.5
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "state": "Pahang",
+              "rate": 143.9,
+              "cases": 17158
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    101.55,
+                    4.0
+                  ],
+                  [
+                    102.55,
+                    4.0
+                  ],
+                  [
+                    103.5,
+                    4.5
+                  ],
+                  [
+                    103.5,
+                    2.9
+                  ],
+                  [
+                    102.8,
+                    2.7
+                  ],
+                  [
+                    101.55,
+                    3.2
+                  ],
+                  [
+                    101.55,
+                    4.0
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "state": "Selangor",
+              "rate": 954.4,
+              "cases": 377889
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    100.85,
+                    3.9
+                  ],
+                  [
+                    101.55,
+                    3.9
+                  ],
+                  [
+                    101.55,
+                    3.2
+                  ],
+                  [
+                    101.2,
+                    2.9
+                  ],
+                  [
+                    100.85,
+                    3.1
+                  ],
+                  [
+                    100.85,
+                    3.9
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "state": "Negeri Sembilan",
+              "rate": 289.4,
+              "cases": 24318
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    101.55,
+                    3.2
+                  ],
+                  [
+                    102.2,
+                    3.2
+                  ],
+                  [
+                    102.2,
+                    2.6
+                  ],
+                  [
+                    101.7,
+                    2.55
+                  ],
+                  [
+                    101.2,
+                    2.9
+                  ],
+                  [
+                    101.55,
+                    3.2
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "state": "Melaka",
+              "rate": 210.7,
+              "cases": 14063
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    101.7,
+                    2.55
+                  ],
+                  [
+                    102.35,
+                    2.55
+                  ],
+                  [
+                    102.35,
+                    2.1
+                  ],
+                  [
+                    101.9,
+                    2.1
+                  ],
+                  [
+                    101.7,
+                    2.55
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "state": "Johor",
+              "rate": 271.8,
+              "cases": 71832
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    102.2,
+                    2.6
+                  ],
+                  [
+                    103.5,
+                    2.9
+                  ],
+                  [
+                    104.35,
+                    1.9
+                  ],
+                  [
+                    103.5,
+                    1.25
+                  ],
+                  [
+                    102.2,
+                    1.8
+                  ],
+                  [
+                    102.2,
+                    2.6
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "state": "Sarawak",
+              "rate": 93.6,
+              "cases": 18287
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    109.6,
+                    4.6
+                  ],
+                  [
+                    115.6,
+                    4.6
+                  ],
+                  [
+                    115.6,
+                    1.0
+                  ],
+                  [
+                    109.6,
+                    1.0
+                  ],
+                  [
+                    109.6,
+                    4.6
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "state": "Sabah",
+              "rate": 103.4,
+              "cases": 24020
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    115.6,
+                    7.4
+                  ],
+                  [
+                    119.3,
+                    7.4
+                  ],
+                  [
+                    119.3,
+                    4.6
+                  ],
+                  [
+                    115.6,
+                    4.6
+                  ],
+                  [
+                    115.6,
+                    7.4
+                  ]
+                ]
+              ]
+            }
+          }
+        ],
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "white",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "color": {
+          "field": "properties.rate",
+          "type": "quantitative",
+          "title": "Rate per 100k/yr",
+          "scale": {
+            "scheme": "orangered",
+            "domain": [
+              0,
+              500
+            ]
+          },
+          "legend": {
+            "orient": "bottom-right",
+            "titleFontSize": 11
+          }
+        },
+        "tooltip": [
+          {
+            "field": "properties.state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "properties.rate",
+            "type": "quantitative",
+            "title": "Rate per 100,000/yr",
+            "format": ".1f"
+          },
+          {
+            "field": "properties.cases",
+            "type": "quantitative",
+            "title": "Total Cases",
+            "format": ","
+          }
         ]
-      },
-      "legend": {
-        "orient": "bottom-right",
-        "titleFontSize": 11
       }
-    },
-    "tooltip": [
-      {
-        "field": "properties.state",
-        "type": "nominal",
-        "title": "State"
-      },
-      {
-        "field": "properties.avg_annual_rate",
-        "type": "quantitative",
-        "title": "Rate per 100,000/yr",
-        "format": ".1f"
-      },
-      {
-        "field": "properties.total_cases",
-        "type": "quantitative",
-        "title": "Total Cases",
-        "format": ","
-      }
-    ]
-  }
+    }
+  ]
 }
