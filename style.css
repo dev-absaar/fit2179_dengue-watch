@@ -1,0 +1,364 @@
+/* ============================================
+   DENGUE WATCH — STYLESHEET
+   FIT2179 Data Visualisation 2
+   ============================================ */
+
+:root {
+    --dengue-low:      #FEE8C8;
+    --dengue-mid:      #E6850E;
+    --dengue-high:     #B84203;
+    --dengue-critical: #7F2704;
+    --rain-blue:       #2171B5;
+    --text-dark:       #111111;
+    --text-body:       #333333;
+    --text-muted:      #666666;
+    --text-light:      #999999;
+    --bg-page:         #F7F4F0;
+    --bg-white:        #FFFFFF;
+    --bg-alt:          #EFEBE4;
+    --border:          #DDD8D0;
+    --accent:          #B84203;
+    --shadow-sm:       0 1px 4px rgba(0,0,0,0.07);
+    --shadow-md:       0 4px 16px rgba(0,0,0,0.09);
+}
+
+/* --- Reset --- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Base --- */
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.75;
+    color: var(--text-body);
+    background-color: var(--bg-page);
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+em { font-style: italic; }
+strong { font-weight: 600; color: var(--text-dark); }
+
+/* --- Page container --- */
+.page-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* ============================================
+   HEADER / HERO
+   ============================================ */
+.hero {
+    padding: 80px 0 56px;
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-inner {
+    max-width: 700px;
+}
+
+.hero-tag {
+    display: inline-block;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3.5px;
+    color: var(--bg-white);
+    background: var(--dengue-high);
+    padding: 5px 14px;
+    border-radius: 3px;
+    margin-bottom: 28px;
+}
+
+.hero-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 46px;
+    font-weight: 400;
+    color: var(--text-dark);
+    line-height: 1.15;
+    margin-bottom: 22px;
+    letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+    font-size: 19px;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 36px;
+    max-width: 620px;
+}
+
+.hero-divider {
+    width: 48px;
+    height: 3px;
+    background: var(--dengue-high);
+    border-radius: 2px;
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+.section {
+    padding: 64px 0;
+    border-top: 1px solid var(--border);
+}
+
+.section--alt {
+    background-color: var(--bg-alt);
+    margin-left: -32px;
+    margin-right: -32px;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.section-header {
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.section-number {
+    display: block;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 34px;
+    font-weight: 400;
+    color: var(--text-dark);
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+}
+
+/* ============================================
+   NARRATIVE TEXT
+   ============================================ */
+.narrative {
+    max-width: 680px;
+    margin-bottom: 36px;
+}
+
+.narrative p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--text-body);
+    margin-bottom: 18px;
+}
+
+.narrative p:last-child { margin-bottom: 0; }
+
+/* ============================================
+   STAT CARDS
+   ============================================ */
+.stat-row {
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 20px;
+    text-align: left;
+    margin: 0 10px 16px 0;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.stat-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.stat-card--danger  { border-top: 4px solid var(--dengue-critical); }
+.stat-card--warning { border-top: 4px solid var(--dengue-mid); }
+
+.stat-number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: var(--dengue-critical);
+    line-height: 1.05;
+    margin-bottom: 8px;
+}
+
+.stat-card--warning .stat-number { color: var(--dengue-high); }
+
+.stat-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    line-height: 1.4;
+}
+
+/* ============================================
+   CHART BLOCKS
+   ============================================ */
+.chart-block {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 32px 28px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow-sm);
+}
+
+.chart-block--hero {
+    padding: 36px 32px;
+    border: 1.5px solid var(--dengue-mid);
+    box-shadow: var(--shadow-md);
+}
+
+.chart-label {
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chart-title {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.3;
+    margin-bottom: 5px;
+}
+
+.chart-subtitle {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.chart-embed {
+    width: 100%;
+    margin: 16px 0 4px;
+}
+
+.chart-source {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--text-light);
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* --- Side-by-side chart pairs --- */
+.chart-pair { margin-bottom: 0; }
+
+.chart-pair .pure-u-md-1-2:first-child .chart-block {
+    margin-right: 12px;
+}
+
+.chart-pair .pure-u-md-1-2:last-child .chart-block {
+    margin-left: 12px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background: var(--bg-alt);
+    border-top: 1px solid var(--border);
+    padding: 56px 0 64px;
+    margin-top: 64px;
+}
+
+.footer-block { padding-right: 32px; margin-bottom: 24px; }
+
+.footer-heading {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.footer-list { list-style: none; padding: 0; }
+
+.footer-list li {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 2.1;
+}
+
+.footer-list a { color: var(--accent); }
+.footer-list a:hover { text-decoration: underline; }
+
+.footer-text {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.75;
+    margin-bottom: 16px;
+}
+
+.footer-author {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .page-container { padding: 0 20px; }
+
+    .hero { padding: 56px 0 40px; }
+    .hero-title { font-size: 30px; }
+    .hero-subtitle { font-size: 16px; }
+
+    .section { padding: 48px 0; }
+    .section-title { font-size: 26px; }
+    .section--alt {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .stat-number { font-size: 32px; }
+    .chart-block { padding: 20px 16px; }
+
+    .chart-pair .pure-u-md-1-2:first-child .chart-block,
+    .chart-pair .pure-u-md-1-2:last-child .chart-block {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding: 40px 20px 48px;
+    }
+}
