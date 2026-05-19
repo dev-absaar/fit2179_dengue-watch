@@ -285,10 +285,9 @@ strong { font-weight: 600; color: var(--text-dark); }
    FOOTER
    ============================================ */
 .footer {
-    background: var(--text-dark);
-    margin-left: -32px;
-    margin-right: -32px;
-    padding: 56px 32px 64px;
+    background: var(--bg-alt);
+    border-top: 1px solid var(--border);
+    padding: 56px 0 64px;
     margin-top: 64px;
 }
 
@@ -300,7 +299,7 @@ strong { font-weight: 600; color: var(--text-dark); }
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--text-light);
+    color: var(--text-muted);
     margin-bottom: 16px;
 }
 
@@ -308,16 +307,16 @@ strong { font-weight: 600; color: var(--text-dark); }
 
 .footer-list li {
     font-size: 13px;
-    color: #AAAAAA;
+    color: var(--text-muted);
     line-height: 2.1;
 }
 
-.footer-list a { color: var(--dengue-low); }
-.footer-list a:hover { color: var(--bg-white); }
+.footer-list a { color: var(--accent); }
+.footer-list a:hover { text-decoration: underline; }
 
 .footer-text {
     font-size: 13px;
-    color: #AAAAAA;
+    color: var(--text-muted);
     line-height: 1.75;
     margin-bottom: 16px;
 }
@@ -325,7 +324,7 @@ strong { font-weight: 600; color: var(--text-dark); }
 .footer-author {
     font-size: 15px;
     font-weight: 600;
-    color: var(--bg-white);
+    color: var(--text-dark);
     margin-bottom: 0;
 }
 
