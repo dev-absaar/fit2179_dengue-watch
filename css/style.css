@@ -1,5 +1,5 @@
 /* ============================================
-   DENGUE WATCH — REUTERS-INSPIRED STYLESHEET
+   DENGUE WATCH — STYLESHEET
    FIT2179 Data Visualisation 2
    ============================================ */
 
@@ -10,12 +10,12 @@
     --dengue-low:      #FEE8C8;
     --reuters-red:     #CC0000;
     --text-dark:       #0A0A0A;
-    --text-body:       #1A1A1A;
-    --text-muted:      #555555;
-    --text-light:      #888888;
+    --text-body:       #2B2B2B;
+    --text-muted:      #606060;
+    --text-light:      #999999;
     --bg-page:         #FFFFFF;
-    --bg-section:      #F4F4F4;
-    --border:          #DDDDDD;
+    --bg-section:      #F5F5F5;
+    --border:          #E0E0E0;
     --accent:          #B84203;
 }
 
@@ -23,10 +23,9 @@
 html { scroll-behavior: smooth; }
 
 body {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 1.75;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
     color: var(--text-body);
     background-color: var(--bg-page);
     -webkit-font-smoothing: antialiased;
@@ -35,98 +34,93 @@ body {
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 em { font-style: italic; }
-strong { font-weight: 700; }
+strong { font-weight: 600; color: var(--text-dark); }
 
 .page-container {
-    max-width: 740px;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 32px;
 }
 
 /* HERO */
-.hero { padding: 40px 0 36px; border-bottom: 1px solid var(--border); }
-.hero-inner { max-width: 100%; }
+.hero { padding: 52px 0 44px; border-bottom: 1px solid var(--border); }
+.hero-inner { max-width: 680px; }
 
 .hero-tag {
     display: block;
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
     color: var(--reuters-red);
     margin-bottom: 16px;
 }
 
 .hero-title {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 52px;
-    font-weight: 700;
+    font-family: 'DM Serif Display', serif;
+    font-size: 38px;
+    font-weight: 400;
     color: var(--text-dark);
-    line-height: 1.05;
-    margin-bottom: 20px;
-    letter-spacing: -1px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -0.3px;
 }
 
 .hero-subtitle {
-    font-family: 'Georgia', serif;
-    font-size: 20px;
-    color: var(--text-body);
+    font-size: 16px;
+    color: var(--text-muted);
     line-height: 1.65;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }
 
 .hero-divider {
-    width: 100%;
-    height: 1px;
-    background: var(--border);
-    margin-top: 28px;
+    width: 48px;
+    height: 3px;
+    background: var(--reuters-red);
+    border-radius: 1px;
 }
 
 /* SECTIONS */
-.section { padding: 48px 0; border-top: 1px solid var(--border); }
+.section { padding: 52px 0; border-top: 1px solid var(--border); }
 
 .section--alt {
     background-color: var(--bg-section);
-    margin-left: -24px;
-    margin-right: -24px;
-    padding-left: 24px;
-    padding-right: 24px;
+    margin-left: -32px;
+    margin-right: -32px;
+    padding-left: 32px;
+    padding-right: 32px;
 }
 
 .section-header { margin-bottom: 24px; }
 
 .section-number {
     display: block;
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
     color: var(--reuters-red);
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
     margin-bottom: 6px;
 }
 
 .section-title {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 36px;
-    font-weight: 700;
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    font-weight: 400;
     color: var(--text-dark);
-    line-height: 1.1;
-    letter-spacing: -0.5px;
-    border-left: 4px solid var(--reuters-red);
-    padding-left: 14px;
+    line-height: 1.2;
+    border-left: 3px solid var(--reuters-red);
+    padding-left: 12px;
 }
 
 /* NARRATIVE */
-.narrative { max-width: 100%; margin-bottom: 28px; }
+.narrative { max-width: 680px; margin-bottom: 28px; }
 
 .narrative p {
-    font-family: 'Georgia', serif;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 1.8;
     color: var(--text-body);
-    margin-bottom: 20px;
+    margin-bottom: 14px;
 }
 
 .narrative p:last-child { margin-bottom: 0; }
@@ -136,100 +130,94 @@ strong { font-weight: 700; }
 
 .stat-card {
     background: var(--bg-page);
-    border: none;
+    border: 1px solid var(--border);
     border-top: 3px solid var(--border);
-    border-radius: 0;
-    padding: 20px 16px 20px 0;
-    margin: 0 8px 0 0;
+    border-radius: 4px;
+    padding: 20px 16px;
+    margin: 0 8px 12px 0;
 }
 
 .stat-card--danger  { border-top-color: var(--dengue-critical); }
 .stat-card--warning { border-top-color: var(--dengue-mid); }
 
 .stat-number {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 44px;
-    font-weight: 700;
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    font-weight: 400;
     color: var(--dengue-critical);
-    line-height: 1.0;
-    margin-bottom: 6px;
+    line-height: 1.1;
+    margin-bottom: 4px;
 }
 
 .stat-card--warning .stat-number { color: var(--dengue-mid); }
 
 .stat-label {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 13px;
+    font-size: 12px;
+    font-weight: 600;
     color: var(--text-muted);
-    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-/* CHART BLOCKS — no cards, flows directly in content like Reuters */
+/* CHART BLOCKS */
 .chart-block {
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    padding: 0;
-    margin-bottom: 40px;
+    background: #FAFAFA;
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--text-dark);
+    border-radius: 0 0 4px 4px;
+    padding: 20px 20px 16px;
+    margin-bottom: 28px;
 }
 
-.chart-block--hero { padding: 0; border: none; }
-.chart-label { margin-bottom: 10px; }
+.chart-block--hero {
+    border-top-color: var(--dengue-high);
+}
+
+.chart-label { margin-bottom: 12px; }
 
 .chart-title {
-    font-family: 'Source Sans 3', sans-serif;
     font-size: 13px;
     font-weight: 700;
     color: var(--text-dark);
     text-transform: uppercase;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.5px;
     margin-bottom: 3px;
 }
 
 .chart-subtitle {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     color: var(--text-muted);
     line-height: 1.4;
 }
 
-.chart-embed {
-    width: 100%;
-    margin: 8px 0 0;
-    border-top: 2px solid var(--text-dark);
-    padding-top: 8px;
-}
+.chart-embed { width: 100%; margin: 8px 0 4px; overflow: hidden; }
 
 .chart-source {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     color: var(--text-light);
-    margin-top: 8px;
-    line-height: 1.5;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+    font-style: italic;
 }
 
 /* CHART PAIRS */
 .chart-pair { margin-bottom: 0; }
-
-.chart-pair .pure-u-md-1-2:first-child .chart-block { padding-right: 20px; }
-.chart-pair .pure-u-md-1-2:last-child .chart-block {
-    padding-left: 20px;
-    border-left: 1px solid var(--border);
-}
+.chart-pair .pure-u-md-1-2:first-child .chart-block { margin-right: 10px; }
+.chart-pair .pure-u-md-1-2:last-child .chart-block  { margin-left: 10px; }
 
 /* FOOTER */
 .footer {
     background: var(--bg-section);
-    border-top: 3px solid var(--border);
-    padding: 48px 0 56px;
-    margin-top: 48px;
+    border-top: 1px solid var(--border);
+    padding: 44px 0 52px;
+    margin-top: 52px;
 }
 
 .footer-block { padding-right: 24px; margin-bottom: 20px; }
 
 .footer-heading {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -238,39 +226,19 @@ strong { font-weight: 700; }
 }
 
 .footer-list { list-style: none; padding: 0; }
-
-.footer-list li {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 2;
-}
-
+.footer-list li { font-size: 13px; color: var(--text-muted); line-height: 2; }
 .footer-list a { color: var(--accent); }
 
-.footer-text {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.7;
-    margin-bottom: 12px;
-}
-
-.footer-author {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--text-dark);
-}
+.footer-text { font-size: 13px; color: var(--text-muted); line-height: 1.7; margin-bottom: 10px; }
+.footer-author { font-size: 13px; font-weight: 700; color: var(--text-dark); }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .page-container { padding: 0 16px; }
-    .hero-title { font-size: 34px; }
-    .section-title { font-size: 26px; }
-    .narrative p { font-size: 18px; }
-    .stat-number { font-size: 34px; }
+    .hero-title { font-size: 28px; }
+    .section-title { font-size: 22px; }
+    .stat-number { font-size: 26px; }
     .section--alt { margin-left: -16px; margin-right: -16px; padding-left: 16px; padding-right: 16px; }
     .chart-pair .pure-u-md-1-2:first-child .chart-block,
-    .chart-pair .pure-u-md-1-2:last-child .chart-block { padding: 0; border: none; }
+    .chart-pair .pure-u-md-1-2:last-child .chart-block { margin: 0 0 16px 0; }
 }
