@@ -12,18 +12,18 @@
   "facet": {
     "field": "state",
     "type": "nominal",
-    "columns": 5,
+    "columns": 2,
     "header": {
       "title": null,
       "labelFontSize": 13,
       "labelFontWeight": "bold",
       "labelColor": "#424242",
-      "labelPadding": 8
+      "labelPadding": 6
     }
   },
   "spec": {
-    "width": 140,
-    "height": 140,
+    "width": 300,
+    "height": 120,
     "mark": {
       "type": "area",
       "color": "#F4A261",
@@ -34,13 +34,12 @@
       "x": {
         "field": "month_num",
         "type": "ordinal",
-        "title": null,
+        "title": "Month",
         "axis": {
-          "values": [1, 3, 5, 7, 9, 11],
-          "labelExpr": "['J','F','M','A','M','J','J','A','S','O','N','D'][datum.value - 1]",
-          "labelFontSize": 10,
-          "grid": false,
-          "ticks": true
+          "labelExpr": "['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][datum.value - 1]",
+          "labelFontSize": 9,
+          "labelAngle": -45,
+          "grid": false
         }
       },
       "y": {
@@ -49,8 +48,7 @@
         "title": "Cases",
         "axis": {
           "labelFontSize": 9,
-          "tickCount": 3,
-          "grid": true,
+          "tickCount": 4,
           "titleFontSize": 9
         }
       },
@@ -62,6 +60,6 @@
     }
   },
   "config": {
-    "facet": {"spacing": 16}
+    "facet": {"spacing": 20}
   }
 }
