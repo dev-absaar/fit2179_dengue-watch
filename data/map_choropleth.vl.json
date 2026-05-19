@@ -1,0 +1,39 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 420,
+  "data": {
+    "url": "data/malaysia_states.geojson",
+    "format": {"type": "json", "property": "features"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.state",
+      "from": {
+        "data": {"url": "data/dengue_state_incidence.csv"},
+        "key": "state",
+        "fields": ["total_cases", "avg_annual_rate"]
+      }
+    }
+  ],
+  "projection": {"type": "mercator", "fit": true},
+  "mark": {
+    "type": "geoshape",
+    "stroke": "white",
+    "strokeWidth": 1.5
+  },
+  "encoding": {
+    "color": {
+      "field": "avg_annual_rate",
+      "type": "quantitative",
+      "title": "Rate per 100k/yr",
+      "scale": {"scheme": "orangered", "domain": [0, 450]},
+      "legend": {"orient": "bottom-right", "titleFontSize": 11}
+    },
+    "tooltip": [
+      {"field": "properties.state", "type": "nominal", "title": "State"},
+      {"field": "avg_annual_rate", "type": "quantitative", "title": "Rate per 100,000/yr", "format": ".1f"},
+      {"field": "total_cases", "type": "quantitative", "title": "Total Cases", "format": ","}
+    ]
+  }
+}
