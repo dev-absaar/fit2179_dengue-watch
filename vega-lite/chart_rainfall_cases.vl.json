@@ -1,63 +1,38 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 350,
-  "data": {
-    "url": "data/rainfall_dengue_monthly_2019.csv"
-  },
-  "resolve": {
-    "scale": {"y": "independent"}
-  },
+  "height": 300,
+  "data": {"url": "data/rainfall_dengue_annual.csv"},
   "layer": [
     {
-      "mark": {
-        "type": "bar",
-        "color": "#2171B5",
-        "opacity": 0.3
-      },
+      "mark": {"type": "bar", "color": "#ADE8F4", "opacity": 0.8},
       "encoding": {
-        "x": {
-          "field": "month",
-          "type": "ordinal",
-          "title": "Month (2019)",
-          "axis": {
-            "labelAngle": 0,
-            "values": [1,2,3,4,5,6,7,8,9,10,11,12,13],
-            "labelExpr": "['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec',''][datum.value-1]"
-          }
-        },
+        "x": {"field": "year", "type": "ordinal", "title": "Year"},
         "y": {
           "field": "rainfall_mm",
           "type": "quantitative",
-          "title": "Avg weekly rainfall (mm)",
-          "axis": {"titleColor": "#2171B5"}
+          "title": "Annual Rainfall (mm)",
+          "axis": {"titleColor": "#0077B6"}
         },
         "tooltip": [
-          {"field": "rainfall_mm", "type": "quantitative", "title": "Rainfall (mm)", "format": ".0f"},
-          {"field": "dengue_cases", "type": "quantitative", "title": "Dengue cases", "format": ","}
+          {"field": "year", "type": "ordinal", "title": "Year"},
+          {"field": "rainfall_mm", "type": "quantitative", "title": "Rainfall (mm)", "format": ","},
+          {"field": "national_cases", "type": "quantitative", "title": "Dengue Cases", "format": ","}
         ]
       }
     },
     {
-      "mark": {
-        "type": "line",
-        "color": "#B84203",
-        "strokeWidth": 3,
-        "point": {"filled": true, "size": 60, "color": "#B84203"}
-      },
+      "mark": {"type": "line", "color": "#B84203", "strokeWidth": 3, "point": {"color": "#B84203", "size": 80}},
       "encoding": {
-        "x": {"field": "month", "type": "ordinal"},
+        "x": {"field": "year", "type": "ordinal"},
         "y": {
-          "field": "dengue_cases",
+          "field": "national_cases",
           "type": "quantitative",
-          "title": "Avg weekly dengue cases",
-          "axis": {"titleColor": "#B84203"}
+          "title": "National Dengue Cases",
+          "axis": {"titleColor": "#B84203", "orient": "right"}
         }
       }
     }
   ],
-  "config": {
-    "view": {"stroke": null},
-    "axis": {"grid": true, "gridColor": "#F0F0F0"}
-  }
+  "resolve": {"scale": {"y": "independent"}}
 }

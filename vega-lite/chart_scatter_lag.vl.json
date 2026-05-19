@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 300,
+  "data": {"url": "data/rainfall_dengue_annual.csv"},
+  "layer": [
+    {
+      "mark": {"type": "point", "filled": true, "size": 120, "opacity": 0.85},
+      "encoding": {
+        "x": {
+          "field": "rainfall_mm",
+          "type": "quantitative",
+          "title": "Annual Rainfall (mm)",
+          "scale": {"zero": false}
+        },
+        "y": {
+          "field": "national_cases",
+          "type": "quantitative",
+          "title": "National Dengue Cases",
+          "axis": {"format": ",.0f"}
+        },
+        "color": {
+          "field": "national_cases",
+          "type": "quantitative",
+          "scale": {"scheme": "orangered"},
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "year", "type": "ordinal", "title": "Year"},
+          {"field": "rainfall_mm", "type": "quantitative", "title": "Rainfall (mm)", "format": ","},
+          {"field": "national_cases", "type": "quantitative", "title": "Cases", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "dy": -12, "fontSize": 11, "fontWeight": 600},
+      "encoding": {
+        "x": {"field": "rainfall_mm", "type": "quantitative"},
+        "y": {"field": "national_cases", "type": "quantitative"},
+        "text": {"field": "year", "type": "ordinal"}
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "#6B6B6B", "strokeDash": [4, 4], "strokeWidth": 1.5},
+      "transform": [{"regression": "national_cases", "on": "rainfall_mm"}],
+      "encoding": {
+        "x": {"field": "rainfall_mm", "type": "quantitative"},
+        "y": {"field": "national_cases", "type": "quantitative"}
+      }
+    }
+  ]
+}
