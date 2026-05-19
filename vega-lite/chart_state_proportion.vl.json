@@ -2,48 +2,25 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": 320,
-  "title": {
-    "text": "Dengue Cases by State (2010–2023)",
-    "subtitle": "Selangor dominates every year — a structural problem, not a one-off outbreak",
-    "fontSize": 15,
-    "subtitleFontSize": 12,
-    "subtitleColor": "#6B6B6B",
-    "anchor": "start",
-    "font": "DM Serif Display"
-  },
-  "data": {
-    "url": "data/dengue_heatmap.csv"
-  },
+  "data": {"url": "data/dengue_heatmap.csv"},
   "transform": [
-    {
-      "filter": "datum.cases > 0"
-    },
-    {
-      "filter": "datum.state !== 'Kedah' && datum.state !== 'Perlis' && datum.state !== 'Melaka' && datum.state !== 'Terengganu'"
-    }
+    {"filter": "datum.cases > 0"},
+    {"filter": "datum.state !== 'Kedah' && datum.state !== 'Perlis' && datum.state !== 'Melaka' && datum.state !== 'Terengganu' && datum.state !== 'Kuala Lumpur'"}
   ],
   "mark": {"type": "bar"},
   "encoding": {
-    "x": {
-      "field": "year",
-      "type": "ordinal",
-      "title": "Year",
-      "axis": {"labelAngle": -45}
-    },
+    "x": {"field": "year", "type": "ordinal", "title": "Year", "axis": {"labelAngle": -45}},
     "y": {
-      "field": "cases",
-      "type": "quantitative",
-      "title": "Dengue Cases",
+      "field": "cases", "type": "quantitative",
+      "title": "Share of National Cases (%)",
       "stack": "normalize",
       "axis": {"format": ".0%"}
     },
     "color": {
-      "field": "state",
-      "type": "nominal",
-      "title": "State",
+      "field": "state", "type": "nominal", "title": "State",
       "scale": {
-        "domain": ["Selangor", "Johor", "Kuala Lumpur", "Perak", "Kelantan", "Pulau Pinang", "Sabah", "Negeri Sembilan", "Sarawak", "Pahang"],
-        "range": ["#B84203", "#F4A261", "#E9C46A", "#2A9D8F", "#264653", "#A8DADC", "#457B9D", "#E76F51", "#606C38", "#DDA15E"]
+        "domain": ["Selangor","Johor","Perak","Kelantan","Pulau Pinang","Sabah","Negeri Sembilan","Sarawak","Pahang"],
+        "range": ["#B84203","#F4A261","#E9C46A","#2A9D8F","#264653","#A8DADC","#457B9D","#E76F51","#606C38"]
       }
     },
     "tooltip": [

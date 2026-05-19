@@ -3,52 +3,23 @@
   "title": {
     "text": "Monthly Dengue Patterns by State (2010)",
     "subtitle": "Each state has a different seasonal peak — one control strategy does not fit all",
-    "fontSize": 15,
-    "subtitleFontSize": 12,
-    "subtitleColor": "#6B6B6B",
-    "anchor": "start",
-    "font": "DM Serif Display"
+    "fontSize": 15, "subtitleFontSize": 12, "subtitleColor": "#6B6B6B", "anchor": "start"
   },
-  "data": {
-    "url": "data/dengue_small_multiples.csv"
-  },
+  "data": {"url": "data/dengue_small_multiples.csv"},
   "facet": {
-    "field": "state",
-    "type": "nominal",
-    "columns": 4,
-    "header": {
-      "title": null,
-      "labelFontSize": 12,
-      "labelFontWeight": "bold",
-      "labelColor": "#424242"
-    }
+    "field": "state", "type": "nominal", "columns": 3,
+    "header": {"title": null, "labelFontSize": 12, "labelFontWeight": "bold", "labelColor": "#424242"}
   },
   "spec": {
-    "width": 160,
-    "height": 100,
-    "mark": {
-      "type": "area",
-      "color": "#F4A261",
-      "line": {"color": "#B84203", "strokeWidth": 1.5},
-      "opacity": 0.6
-    },
+    "width": 200,
+    "height": 110,
+    "mark": {"type": "area", "color": "#F4A261", "line": {"color": "#B84203", "strokeWidth": 1.5}, "opacity": 0.6},
     "encoding": {
       "x": {
-        "field": "month_num",
-        "type": "ordinal",
-        "title": null,
-        "axis": {
-          "values": [1, 4, 7, 10],
-          "labelExpr": "['Jan','Apr','Jul','Oct'][datum.value - 1]",
-          "labelFontSize": 9
-        }
+        "field": "month_num", "type": "ordinal", "title": null,
+        "axis": {"values": [1,4,7,10], "labelExpr": "['Jan','Apr','Jul','Oct'][datum.value - 1]", "labelFontSize": 9}
       },
-      "y": {
-        "field": "cases",
-        "type": "quantitative",
-        "title": null,
-        "axis": {"labelFontSize": 9, "tickCount": 3}
-      },
+      "y": {"field": "cases", "type": "quantitative", "title": null, "axis": {"labelFontSize": 9, "tickCount": 3}},
       "tooltip": [
         {"field": "state", "type": "nominal", "title": "State"},
         {"field": "month", "type": "nominal", "title": "Month"},

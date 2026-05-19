@@ -1,14 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 380,
+  "height": 400,
   "data": {
-    "url": "https://raw.githubusercontent.com/wmgeolab/geoBoundaries/main/releaseData/gbOpen/MYS/ADM1/geoBoundaries-MYS-ADM1_simplified.geojson",
+    "url": "data/malaysia_states.geojson",
     "format": {"type": "json", "property": "features"}
   },
   "transform": [
     {
-      "lookup": "properties.shapeName",
+      "lookup": "properties.state",
       "from": {
         "data": {"url": "data/dengue_state_incidence.csv"},
         "key": "state",
@@ -17,19 +17,19 @@
     }
   ],
   "projection": {"type": "mercator"},
-  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 1},
+  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 1.5},
   "encoding": {
     "color": {
       "field": "avg_annual_rate",
       "type": "quantitative",
       "title": "Rate per 100k/yr",
-      "scale": {"scheme": "orangered", "domain": [0, 500]},
+      "scale": {"scheme": "orangered", "domain": [0, 450]},
       "legend": {"orient": "bottom-right", "titleFontSize": 11}
     },
     "tooltip": [
-      {"field": "properties.shapeName", "type": "nominal", "title": "State"},
+      {"field": "properties.state", "type": "nominal", "title": "State"},
       {"field": "avg_annual_rate", "type": "quantitative", "title": "Rate per 100,000/yr", "format": ".1f"},
-      {"field": "total_cases", "type": "quantitative", "title": "Total Cases (2010–2023)", "format": ","}
+      {"field": "total_cases", "type": "quantitative", "title": "Total Cases (2010-2023)", "format": ","}
     ]
   }
 }

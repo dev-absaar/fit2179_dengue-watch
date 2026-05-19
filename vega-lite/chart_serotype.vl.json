@@ -3,13 +3,9 @@
   "width": "container",
   "height": 300,
   "title": {
-    "text": "Dengue Serotype Shifts in Malaysia (2010–2019)",
-    "subtitle": "DENV-1 surged after 2014 — when a new serotype dominates, immunity gaps drive outbreaks",
-    "fontSize": 15,
-    "subtitleFontSize": 12,
-    "subtitleColor": "#6B6B6B",
-    "anchor": "start",
-    "font": "DM Serif Display"
+    "text": "Dengue Serotype Proportions in Malaysia (2010-2019)",
+    "subtitle": "DENV-1 dominated 2013-2016 — when a new serotype surges, immunity gaps drive major outbreaks",
+    "fontSize": 15, "subtitleFontSize": 12, "subtitleColor": "#6B6B6B", "anchor": "start"
   },
   "data": {
     "values": [
@@ -57,27 +53,11 @@
   },
   "mark": {"type": "area"},
   "encoding": {
-    "x": {
-      "field": "year",
-      "type": "ordinal",
-      "title": "Year",
-      "axis": {"labelAngle": 0}
-    },
-    "y": {
-      "field": "proportion",
-      "type": "quantitative",
-      "title": "Proportion (%)",
-      "stack": "normalize",
-      "axis": {"format": ".0%"}
-    },
+    "x": {"field": "year", "type": "ordinal", "title": "Year", "axis": {"labelAngle": 0}},
+    "y": {"field": "proportion", "type": "quantitative", "title": "Proportion (%)", "stack": "normalize", "axis": {"format": ".0%"}},
     "color": {
-      "field": "serotype",
-      "type": "nominal",
-      "title": "Serotype",
-      "scale": {
-        "domain": ["DENV-1", "DENV-2", "DENV-3", "DENV-4"],
-        "range": ["#B84203", "#F4A261", "#2A9D8F", "#264653"]
-      }
+      "field": "serotype", "type": "nominal", "title": "Serotype",
+      "scale": {"domain": ["DENV-1","DENV-2","DENV-3","DENV-4"], "range": ["#B84203","#F4A261","#2A9D8F","#264653"]}
     },
     "tooltip": [
       {"field": "year", "type": "ordinal", "title": "Year"},

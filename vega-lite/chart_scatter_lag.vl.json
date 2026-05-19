@@ -2,29 +2,19 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": 300,
+  "title": {
+    "text": "Rainfall vs Dengue Cases — Annual Comparison (2014–2018)",
+    "subtitle": "Each dot = one year · Higher rainfall years do not always mean more dengue — serotype shifts also play a role",
+    "fontSize": 15, "subtitleFontSize": 12, "subtitleColor": "#6B6B6B", "anchor": "start"
+  },
   "data": {"url": "data/rainfall_dengue_annual.csv"},
   "layer": [
     {
-      "mark": {"type": "point", "filled": true, "size": 120, "opacity": 0.85},
+      "mark": {"type": "point", "filled": true, "size": 140, "opacity": 0.85},
       "encoding": {
-        "x": {
-          "field": "rainfall_mm",
-          "type": "quantitative",
-          "title": "Annual Rainfall (mm)",
-          "scale": {"zero": false}
-        },
-        "y": {
-          "field": "national_cases",
-          "type": "quantitative",
-          "title": "National Dengue Cases",
-          "axis": {"format": ",.0f"}
-        },
-        "color": {
-          "field": "national_cases",
-          "type": "quantitative",
-          "scale": {"scheme": "orangered"},
-          "legend": null
-        },
+        "x": {"field": "rainfall_mm", "type": "quantitative", "title": "Annual Rainfall (mm)", "scale": {"zero": false}},
+        "y": {"field": "national_cases", "type": "quantitative", "title": "National Dengue Cases", "axis": {"format": ",.0f"}},
+        "color": {"field": "national_cases", "type": "quantitative", "scale": {"scheme": "orangered"}, "legend": null},
         "tooltip": [
           {"field": "year", "type": "ordinal", "title": "Year"},
           {"field": "rainfall_mm", "type": "quantitative", "title": "Rainfall (mm)", "format": ","},
@@ -33,19 +23,11 @@
       }
     },
     {
-      "mark": {"type": "text", "dy": -12, "fontSize": 11, "fontWeight": 600},
+      "mark": {"type": "text", "dy": -14, "fontSize": 12, "fontWeight": 600},
       "encoding": {
         "x": {"field": "rainfall_mm", "type": "quantitative"},
         "y": {"field": "national_cases", "type": "quantitative"},
         "text": {"field": "year", "type": "ordinal"}
-      }
-    },
-    {
-      "mark": {"type": "line", "color": "#6B6B6B", "strokeDash": [4, 4], "strokeWidth": 1.5},
-      "transform": [{"regression": "national_cases", "on": "rainfall_mm"}],
-      "encoding": {
-        "x": {"field": "rainfall_mm", "type": "quantitative"},
-        "y": {"field": "national_cases", "type": "quantitative"}
       }
     }
   ]
