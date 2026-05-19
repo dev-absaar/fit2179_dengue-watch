@@ -1,0 +1,64 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 300,
+  "data": {
+    "url": "data/dengue_annual_national.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusTopLeft": 3,
+        "cornerRadiusTopRight": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {"labelAngle": 0}
+        },
+        "y": {
+          "field": "deaths",
+          "type": "quantitative",
+          "title": "Deaths"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.year == 2015",
+            "value": "#7F2704"
+          },
+          "value": "#BDBDBD"
+        },
+        "tooltip": [
+          {"field": "year", "type": "ordinal", "title": "Year"},
+          {"field": "deaths", "type": "quantitative", "title": "Deaths"},
+          {"field": "cases", "type": "quantitative", "title": "Cases", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "dy": -10, "fontSize": 11, "fontWeight": 600, "color": "#7F2704"},
+      "transform": [{"filter": "datum.year == 2015"}],
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "deaths", "type": "quantitative"},
+        "text": {"value": "325 — worst year"}
+      }
+    },
+    {
+      "mark": {"type": "text", "dy": -10, "fontSize": 11, "fontWeight": 600, "color": "#2171B5"},
+      "transform": [{"filter": "datum.year == 2021"}],
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "deaths", "type": "quantitative"},
+        "text": {"value": "20 — COVID effect"}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"grid": true, "gridColor": "#F0F0F0"}
+  }
+}

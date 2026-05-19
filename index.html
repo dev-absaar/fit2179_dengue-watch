@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dengue Watch — Malaysia</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Pure.css for layout -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+
+    <!-- Vega-Lite -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="page-container">
+
+        <!-- ===== HEADER ===== -->
+        <header class="hero">
+            <div class="hero-inner">
+                <span class="hero-tag">Dengue Watch</span>
+                <h1 class="hero-title">It rains. Two weeks later, the hospitals fill up.</h1>
+                <p class="hero-subtitle">A data story about Malaysia's dengue crisis, the climate patterns that drive it, and the states paying the highest price.</p>
+                <div class="hero-divider"></div>
+            </div>
+        </header>
+
+        <!-- ===== SECTION 1: THE INVISIBLE ENEMY ===== -->
+        <section class="section" id="section-hook">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">The invisible enemy</h2>
+            </div>
+
+            <!-- Stat cards -->
+            <div class="pure-g stat-row">
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <div class="stat-card stat-card--danger">
+                        <p class="stat-number">130,000+</p>
+                        <p class="stat-label">cases reported in 2024</p>
+                    </div>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <div class="stat-card stat-card--danger">
+                        <p class="stat-number">100+</p>
+                        <p class="stat-label">lives lost in 2024</p>
+                    </div>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <div class="stat-card stat-card--warning">
+                        <p class="stat-number">1 in 250</p>
+                        <p class="stat-label">Malaysians affected yearly</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="narrative">
+                <p>
+                    Dengue fever is not a distant threat — it is a constant presence in Malaysian life. 
+                    In 2024 alone, over 130,000 cases were reported nationwide, making it one of the worst 
+                    years on record. Behind every number is a fever, a hospital bed, and a family waiting. 
+                    Yet despite decades of awareness campaigns and neighbourhood <em>gotong-royong</em> clean-ups, 
+                    the <em>Aedes</em> mosquito continues to thrive in our rapidly urbanising landscape.
+                </p>
+                <p>
+                    The chart below shows how dengue has evolved from a manageable public health concern 
+                    into a crisis that regularly exceeds 100,000 cases per year. Three moments stand out: 
+                    the 2015 record outbreak, the unexpected suppression during COVID-19 lockdowns, and 
+                    the dramatic 2024 resurgence.
+                </p>
+            </div>
+
+            <!-- Chart: Annual cases -->
+            <div class="chart-block">
+                <div class="chart-label">
+                    <h3 class="chart-title">Annual dengue cases in Malaysia</h3>
+                    <p class="chart-subtitle">2010–2024 · National total reported cases</p>
+                </div>
+                <div id="chart-annual-cases" class="chart-embed"></div>
+                <p class="chart-source">Source: Ministry of Health Malaysia via iDengue · OpenDengue (CC-BY 4.0)</p>
+            </div>
+
+            <div class="narrative">
+                <p>
+                    While case numbers capture the scale of the crisis, deaths tell the human cost. 
+                    The year 2015 was catastrophic — 325 Malaysians lost their lives to dengue, the 
+                    highest toll in the country's history. Improved clinical management has since reduced 
+                    fatality rates, but deaths continue every year.
+                </p>
+            </div>
+
+            <!-- Chart: Annual deaths -->
+            <div class="chart-block">
+                <div class="chart-label">
+                    <h3 class="chart-title">Annual dengue deaths in Malaysia</h3>
+                    <p class="chart-subtitle">Colour intensity reflects severity — darker bars indicate higher death tolls</p>
+                </div>
+                <div id="chart-annual-deaths" class="chart-embed"></div>
+                <p class="chart-source">Source: Ministry of Health Malaysia via iDengue</p>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 2: IT FOLLOWS THE RAIN ===== -->
+        <section class="section section--alt" id="section-rain">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">It follows the rain</h2>
+            </div>
+
+            <div class="narrative">
+                <p>
+                    Dengue outbreaks are not random — they follow a predictable pattern tied to rainfall. 
+                    When it rains, water collects in containers, drains, and construction sites, creating 
+                    perfect breeding grounds for <em>Aedes</em> mosquitoes. The mosquitoes breed within 
+                    7–10 days, and symptoms appear 4–14 days after a bite.
+                </p>
+                <p>
+                    The result is a <strong>2–4 week lag</strong> between heavy rainfall and dengue spikes. 
+                    The chart below overlays weekly rainfall in Selangor with national dengue cases. Watch 
+                    how the blue rainfall peaks consistently lead the orange case peaks by several weeks.
+                </p>
+            </div>
+
+            <!-- Chart: Dual-axis -->
+            <div class="chart-block">
+                <div class="chart-label">
+                    <h3 class="chart-title">Weekly rainfall vs dengue cases</h3>
+                    <p class="chart-subtitle">Selangor rainfall (blue) leads national dengue cases (orange) by 2–4 weeks</p>
+                </div>
+                <div id="chart-rainfall-cases" class="chart-embed"></div>
+                <p class="chart-source">Source: Open-Meteo Historical Weather API (rainfall) · MOH Malaysia (cases)</p>
+            </div>
+
+            <div class="narrative">
+                <p>
+                    To test this relationship more rigorously, the scatter plot below shifts the rainfall 
+                    data forward by three weeks and plots it against dengue cases for the same week. Each 
+                    dot represents one week. The upward trend confirms it: <strong>more rain three weeks 
+                    ago predicts more dengue cases today.</strong>
+                </p>
+            </div>
+
+            <!-- Chart: Lagged scatter -->
+            <div class="chart-block">
+                <div class="chart-label">
+                    <h3 class="chart-title">Does rain predict dengue? A lagged correlation</h3>
+                    <p class="chart-subtitle">Rainfall shifted forward by 3 weeks vs same-week dengue cases · Trend line shows positive correlation</p>
+                </div>
+                <div id="chart-scatter-lag" class="chart-embed"></div>
+                <p class="chart-source">Source: Open-Meteo · MOH Malaysia · Lag computed via Vega-Lite window transform</p>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 3: SELANGOR PAYS HALF THE BILL ===== -->
+        <section class="section" id="section-map">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Selangor pays half the bill</h2>
+            </div>
+
+            <div class="narrative">
+                <p>
+                    Not all states suffer equally. Selangor, home to roughly 20% of Malaysia's population, 
+                    consistently carries <strong>almost half of the nation's dengue burden</strong>. In 2015, 
+                    Selangor alone reported over 63,000 cases — an incidence rate exceeding 1,000 per 100,000 
+                    residents. Why? A combination of rapid urbanisation, construction sites with standing water, 
+                    and the highest population density in the country creates a perfect storm for <em>Aedes</em> 
+                    mosquito breeding.
+                </p>
+            </div>
+
+            <!-- Map: Choropleth -->
+            <div class="chart-block chart-block--hero">
+                <div class="chart-label">
+                    <h3 class="chart-title">Dengue incidence rate by state</h3>
+                    <p class="chart-subtitle">Cases per 100,000 people · Darker shades indicate higher dengue burden · Hover for details</p>
+                </div>
+                <div id="map-choropleth" class="chart-embed"></div>
+                <p class="chart-source">Source: OpenDengue · DOSM Malaysia (population) · geoBoundaries (map)</p>
+            </div>
+
+            <!-- Two charts side by side -->
+            <div class="pure-g chart-pair">
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <div class="chart-block">
+                        <div class="chart-label">
+                            <h3 class="chart-title">Share of national cases by state</h3>
+                            <p class="chart-subtitle">Selangor's dominance is consistent across years</p>
+                        </div>
+                        <div id="chart-state-proportion" class="chart-embed"></div>
+                        <p class="chart-source">Source: OpenDengue</p>
+                    </div>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <div class="chart-block">
+                        <div class="chart-label">
+                            <h3 class="chart-title">Density vs dengue incidence</h3>
+                            <p class="chart-subtitle">Bubble size = total cases · Selangor is the clear outlier</p>
+                        </div>
+                        <div id="chart-bubble" class="chart-embed"></div>
+                        <p class="chart-source">Source: OpenDengue · DOSM</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 4: THE HIDDEN PATTERN ===== -->
+        <section class="section section--alt" id="section-serotype">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">The hidden pattern</h2>
+            </div>
+
+            <div class="narrative">
+                <p>
+                    There are four strains of the dengue virus, labelled DENV-1 through DENV-4. When the 
+                    dominant strain in circulation shifts, the population has limited immunity to the new 
+                    variant, and cases explode. This is called a <strong>serotype shift</strong>.
+                </p>
+                <p>
+                    The 2015 record outbreak was not simply caused by more mosquitoes or more rain — it 
+                    coincided with a dramatic shift from DENV-1 to DENV-2 as the dominant circulating 
+                    strain. Understanding this hidden cycle is the key to predicting when the next major 
+                    epidemic will strike.
+                </p>
+            </div>
+
+            <!-- Chart: Serotype stream -->
+            <div class="chart-block">
+                <div class="chart-label">
+                    <h3 class="chart-title">Dengue serotype proportions in Malaysia</h3>
+                    <p class="chart-subtitle">2013–2021 · The DENV-2 surge in 2015 coincided with the worst outbreak in history</p>
+                </div>
+                <div id="chart-serotype" class="chart-embed"></div>
+                <p class="chart-source">Source: Chem et al. (2024), Frontiers in Genetics (CC-BY 4.0)</p>
+            </div>
+
+            <div class="narrative">
+                <p>
+                    The heatmap below reveals another hidden pattern: dengue epidemics do not strike all 
+                    states equally or simultaneously. Some states experience their worst year in 2015, 
+                    while others peak in 2014 or 2019. This uneven timing suggests that local conditions 
+                    — rainfall patterns, urbanisation levels, and immunity gaps — matter as much as 
+                    national trends.
+                </p>
+            </div>
+
+            <!-- Chart: Heatmap -->
+            <div class="chart-block">
+                <div class="chart-label">
+                    <h3 class="chart-title">Dengue incidence by state and year</h3>
+                    <p class="chart-subtitle">Darker cells = higher incidence rate per 100,000 · Each row is one state</p>
+                </div>
+                <div id="chart-heatmap" class="chart-embed"></div>
+                <p class="chart-source">Source: OpenDengue · DOSM Malaysia</p>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 5: WHAT COMES NEXT ===== -->
+        <section class="section" id="section-future">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 class="section-title">What comes next?</h2>
+            </div>
+
+            <div class="narrative">
+                <p>
+                    Malaysia's monsoon patterns are shifting. The northeast monsoon — which drives the 
+                    dengue season — has been arriving earlier in recent years. If this trend continues, 
+                    the dengue season will start earlier and last longer, stretching already-thin public 
+                    health resources.
+                </p>
+                <p>
+                    The charts below compare the monthly shape of dengue outbreaks across three eras. 
+                    Notice how the peak appears to shift and broaden over time — a warning sign that 
+                    climate change may be reshaping Malaysia's dengue landscape.
+                </p>
+            </div>
+
+            <!-- Chart: Small multiples -->
+            <div class="chart-block">
+                <div class="chart-label">
+                    <h3 class="chart-title">Monthly dengue patterns across three eras</h3>
+                    <p class="chart-subtitle">Comparing 2010–2013, 2014–2017, and 2018–2024 · Average monthly cases</p>
+                </div>
+                <div id="chart-small-multiples" class="chart-embed"></div>
+                <p class="chart-source">Source: OpenDengue</p>
+            </div>
+
+            <!-- Chart: Seasonality -->
+            <div class="chart-block">
+                <div class="chart-label">
+                    <h3 class="chart-title">The rhythm of dengue</h3>
+                    <p class="chart-subtitle">Average cases by month across all years — the monsoon drives a clear annual cycle</p>
+                </div>
+                <div id="chart-seasonality" class="chart-embed"></div>
+                <p class="chart-source">Source: OpenDengue</p>
+            </div>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <div class="footer-block">
+                        <h4 class="footer-heading">Data sources</h4>
+                        <ul class="footer-list">
+                            <li>Dengue cases: <a href="https://idengue.mysa.gov.my">iDengue</a>, MOH Malaysia</li>
+                            <li>State-level data: <a href="https://opendengue.org">OpenDengue</a> (CC-BY 4.0)</li>
+                            <li>Rainfall: <a href="https://open-meteo.com">Open-Meteo</a> Historical Weather API</li>
+                            <li>Population: <a href="https://open.dosm.gov.my">OpenDOSM</a>, Dept. of Statistics</li>
+                            <li>Map: <a href="https://www.geoboundaries.org">geoBoundaries</a> (CC-BY 4.0)</li>
+                            <li>Serotypes: Chem et al. (2024), <a href="https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2024.1368843/full">Frontiers in Genetics</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <div class="footer-block">
+                        <h4 class="footer-heading">About this visualisation</h4>
+                        <p class="footer-text">
+                            This visualisation explores the intersection of dengue epidemiology and tropical 
+                            climatology in Malaysia. Created for FIT2179 Data Visualisation 2, Monash University Malaysia.
+                        </p>
+                        <p class="footer-author">Created by [Your Name] · May 2026</p>
+                        <p class="footer-note">Built with Vega-Lite. AI tools (Claude) were used for code assistance and text editing.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- ===== VEGA-LITE EMBEDS ===== -->
+    <script>
+        var opt = { actions: false, renderer: "svg" };
+
+        vegaEmbed('#chart-annual-cases', 'vega-lite/chart_annual_cases.vl.json', opt);
+        vegaEmbed('#chart-annual-deaths', 'vega-lite/chart_annual_deaths.vl.json', opt);
+        vegaEmbed('#chart-rainfall-cases', 'vega-lite/chart_rainfall_cases.vl.json', opt);
+        vegaEmbed('#chart-scatter-lag', 'vega-lite/chart_scatter_lag.vl.json', opt);
+        vegaEmbed('#map-choropleth', 'vega-lite/map_choropleth.vl.json', opt);
+        vegaEmbed('#chart-state-proportion', 'vega-lite/chart_state_proportion.vl.json', opt);
+        vegaEmbed('#chart-bubble', 'vega-lite/chart_bubble.vl.json', opt);
+        vegaEmbed('#chart-serotype', 'vega-lite/chart_serotype.vl.json', opt);
+        vegaEmbed('#chart-heatmap', 'vega-lite/chart_heatmap.vl.json', opt);
+        vegaEmbed('#chart-small-multiples', 'vega-lite/chart_small_multiples.vl.json', opt);
+        vegaEmbed('#chart-seasonality', 'vega-lite/chart_seasonality.vl.json', opt);
+    </script>
+
+</body>
+</html>

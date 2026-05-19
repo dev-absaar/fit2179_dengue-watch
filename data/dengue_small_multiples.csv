@@ -1,0 +1,121 @@
+state,month_num,month,cases
+Johor,1,Jan,245
+Johor,2,Feb,238
+Johor,3,Mar,274
+Johor,4,Apr,246
+Johor,5,May,292
+Johor,6,Jun,523
+Johor,7,Jul,466
+Johor,8,Aug,366
+Johor,9,Sep,625
+Johor,10,Oct,551
+Johor,11,Nov,305
+Johor,12,Dec,275
+Kelantan,1,Jan,69
+Kelantan,2,Feb,74
+Kelantan,3,Mar,134
+Kelantan,4,Apr,119
+Kelantan,5,May,144
+Kelantan,6,Jun,236
+Kelantan,7,Jul,477
+Kelantan,8,Aug,757
+Kelantan,9,Sep,985
+Kelantan,10,Oct,317
+Kelantan,11,Nov,131
+Kelantan,12,Dec,135
+Negeri Sembilan,1,Jan,144
+Negeri Sembilan,2,Feb,316
+Negeri Sembilan,3,Mar,131
+Negeri Sembilan,4,Apr,137
+Negeri Sembilan,5,May,189
+Negeri Sembilan,6,Jun,256
+Negeri Sembilan,7,Jul,108
+Negeri Sembilan,8,Aug,60
+Negeri Sembilan,9,Sep,48
+Negeri Sembilan,10,Oct,38
+Negeri Sembilan,11,Nov,40
+Negeri Sembilan,12,Dec,34
+Pahang,1,Jan,89
+Pahang,2,Feb,118
+Pahang,3,Mar,139
+Pahang,4,Apr,74
+Pahang,5,May,80
+Pahang,6,Jun,221
+Pahang,7,Jul,155
+Pahang,8,Aug,142
+Pahang,9,Sep,131
+Pahang,10,Oct,148
+Pahang,11,Nov,177
+Pahang,12,Dec,214
+Perak,1,Jan,103
+Perak,2,Feb,116
+Perak,3,Mar,209
+Perak,4,Apr,156
+Perak,5,May,146
+Perak,6,Jun,339
+Perak,7,Jul,252
+Perak,8,Aug,247
+Perak,9,Sep,243
+Perak,10,Oct,179
+Perak,11,Nov,130
+Perak,12,Dec,168
+Perlis,1,Jan,9
+Perlis,2,Feb,16
+Perlis,3,Mar,7
+Perlis,4,Apr,12
+Perlis,5,May,17
+Perlis,6,Jun,17
+Perlis,7,Jul,23
+Perlis,8,Aug,22
+Perlis,9,Sep,33
+Perlis,10,Oct,30
+Perlis,11,Nov,16
+Perlis,12,Dec,13
+Pulau Pinang,1,Jan,112
+Pulau Pinang,2,Feb,103
+Pulau Pinang,3,Mar,97
+Pulau Pinang,4,Apr,70
+Pulau Pinang,5,May,83
+Pulau Pinang,6,Jun,138
+Pulau Pinang,7,Jul,159
+Pulau Pinang,8,Aug,182
+Pulau Pinang,9,Sep,302
+Pulau Pinang,10,Oct,202
+Pulau Pinang,11,Nov,169
+Pulau Pinang,12,Dec,217
+Sabah,1,Jan,208
+Sabah,2,Feb,208
+Sabah,3,Mar,155
+Sabah,4,Apr,85
+Sabah,5,May,164
+Sabah,6,Jun,358
+Sabah,7,Jul,224
+Sabah,8,Aug,187
+Sabah,9,Sep,204
+Sabah,10,Oct,118
+Sabah,11,Nov,101
+Sabah,12,Dec,79
+Sarawak,1,Jan,778
+Sarawak,2,Feb,440
+Sarawak,3,Mar,420
+Sarawak,4,Apr,214
+Sarawak,5,May,185
+Sarawak,6,Jun,285
+Sarawak,7,Jul,566
+Sarawak,8,Aug,413
+Sarawak,9,Sep,333
+Sarawak,10,Oct,237
+Sarawak,11,Nov,194
+Sarawak,12,Dec,175
+Selangor,1,Jan,2221
+Selangor,2,Feb,2403
+Selangor,3,Mar,2880
+Selangor,4,Apr,2161
+Selangor,5,May,1630
+Selangor,6,Jun,2007
+Selangor,7,Jul,1609
+Selangor,8,Aug,1253
+Selangor,9,Sep,1271
+Selangor,10,Oct,1119
+Selangor,11,Nov,998
+Selangor,12,Dec,1020

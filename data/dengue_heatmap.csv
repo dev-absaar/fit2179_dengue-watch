@@ -1,0 +1,140 @@
+state,year,cases,rate
+Johor,2010,4406,131.0
+Johor,2011,1583,46.4
+Johor,2012,1650,47.8
+Johor,2013,4828,139.0
+Johor,2014,6323,177.6
+Johor,2015,15743,436.1
+Johor,2016,10641,291.4
+Johor,2017,7932,214.6
+Johor,2018,7932,211.6
+Johor,2023,10794,262.8
+Kedah,2010,782,40.1
+Kedah,2011,514,26.1
+Kedah,2012,817,40.8
+Kedah,2013,813,39.9
+Kedah,2014,1014,49.2
+Kedah,2015,1000,47.7
+Kedah,2016,994,46.9
+Kedah,2017,1430,66.7
+Kedah,2018,1430,66.1
+Kedah,2023,5207,237.8
+Kelantan,2010,3578,225.0
+Kelantan,2011,743,45.9
+Kelantan,2012,1245,75.4
+Kelantan,2013,1427,84.8
+Kelantan,2014,14456,838.8
+Kelantan,2015,2850,161.9
+Kelantan,2016,6180,344.0
+Kelantan,2017,2515,137.5
+Kelantan,2018,2515,135.2
+Kelantan,2023,2790,150.0
+Kuala Lumpur,2010,4205,
+Kuala Lumpur,2011,2038,
+Kuala Lumpur,2012,1814,
+Kuala Lumpur,2013,2570,
+Kuala Lumpur,2014,7185,
+Kuala Lumpur,2015,8332,
+Kuala Lumpur,2016,8663,
+Kuala Lumpur,2017,8350,
+Kuala Lumpur,2018,8350,
+Melaka,2010,1485,180.3
+Melaka,2011,450,54.0
+Melaka,2012,449,53.2
+Melaka,2013,1505,175.7
+Melaka,2014,2770,317.8
+Melaka,2015,2420,272.2
+Melaka,2016,2326,258.1
+Melaka,2017,1425,156.1
+Melaka,2018,12,1.3
+Melaka,2023,1221,118.7
+Negeri Sembilan,2010,1501,145.8
+Negeri Sembilan,2011,737,70.4
+Negeri Sembilan,2012,552,52.2
+Negeri Sembilan,2013,1198,111.7
+Negeri Sembilan,2014,3781,350.2
+Negeri Sembilan,2015,2454,225.4
+Negeri Sembilan,2016,2852,259.4
+Negeri Sembilan,2017,3055,274.2
+Negeri Sembilan,2018,3055,272.1
+Negeri Sembilan,2023,5133,419.1
+Pahang,2010,1688,112.4
+Pahang,2011,894,58.6
+Pahang,2012,641,41.4
+Pahang,2013,725,46.2
+Pahang,2014,2170,136.3
+Pahang,2015,3001,186.6
+Pahang,2016,3050,187.5
+Pahang,2017,1690,102.6
+Pahang,2018,1690,101.5
+Pahang,2023,1609,97.9
+Perak,2010,2288,96.2
+Perak,2011,1411,58.7
+Perak,2012,1716,70.7
+Perak,2013,2519,102.9
+Perak,2014,7525,306.0
+Perak,2015,9466,383.7
+Perak,2016,3777,152.2
+Perak,2017,5411,217.0
+Perak,2018,5411,216.1
+Perak,2023,4516,177.7
+Perlis,2010,215,91.2
+Perlis,2011,110,46.4
+Perlis,2012,172,71.8
+Perlis,2013,226,93.3
+Perlis,2014,317,129.3
+Perlis,2015,258,103.8
+Perlis,2016,183,72.9
+Perlis,2017,175,69.4
+Perlis,2018,175,69.0
+Perlis,2023,821,280.1
+Pulau Pinang,2010,1834,116.4
+Pulau Pinang,2011,1579,98.6
+Pulau Pinang,2012,791,48.7
+Pulau Pinang,2013,1053,63.3
+Pulau Pinang,2014,3141,187.2
+Pulau Pinang,2015,5830,343.3
+Pulau Pinang,2016,2576,150.0
+Pulau Pinang,2017,2681,153.7
+Pulau Pinang,2018,20,1.1
+Pulau Pinang,2023,7346,414.4
+Sabah,2010,2091,64.1
+Sabah,2011,402,12.0
+Sabah,2012,672,19.6
+Sabah,2013,724,20.0
+Sabah,2014,1456,39.7
+Sabah,2015,2904,78.1
+Sabah,2016,3668,96.5
+Sabah,2017,2560,66.4
+Sabah,2018,2560,65.7
+Sabah,2023,6983,194.2
+Sarawak,2010,4240,170.5
+Sarawak,2011,974,38.5
+Sarawak,2012,1519,59.1
+Sarawak,2013,1292,48.9
+Sarawak,2014,2571,96.5
+Sarawak,2015,1923,71.2
+Sarawak,2016,2773,101.3
+Sarawak,2017,952,34.4
+Sarawak,2018,952,34.1
+Sarawak,2023,1091,43.6
+Selangor,2010,16367,297.5
+Selangor,2011,7758,138.5
+Selangor,2012,9113,159.8
+Selangor,2013,23852,403.9
+Selangor,2014,54289,897.1
+Selangor,2015,63198,1023.0
+Selangor,2016,51652,821.0
+Selangor,2017,45290,709.8
+Selangor,2018,45290,699.5
+Selangor,2023,61080,847.2
+Terengganu,2010,1472,139.5
+Terengganu,2011,675,62.6
+Terengganu,2012,739,67.5
+Terengganu,2013,600,53.9
+Terengganu,2014,1688,148.0
+Terengganu,2015,1455,125.3
+Terengganu,2016,2009,169.8
+Terengganu,2017,292,24.2
+Terengganu,2018,292,23.8
+Terengganu,2023,277,22.9

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 300,
+  "title": {
+    "text": "Dengue Serotype Shifts in Malaysia (2010–2019)",
+    "subtitle": "DENV-1 surged after 2014 — when a new serotype dominates, immunity gaps drive outbreaks",
+    "fontSize": 15,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#6B6B6B",
+    "anchor": "start",
+    "font": "DM Serif Display"
+  },
+  "data": {
+    "values": [
+      {"year": 2010, "serotype": "DENV-1", "proportion": 22},
+      {"year": 2010, "serotype": "DENV-2", "proportion": 38},
+      {"year": 2010, "serotype": "DENV-3", "proportion": 30},
+      {"year": 2010, "serotype": "DENV-4", "proportion": 10},
+      {"year": 2011, "serotype": "DENV-1", "proportion": 18},
+      {"year": 2011, "serotype": "DENV-2", "proportion": 42},
+      {"year": 2011, "serotype": "DENV-3", "proportion": 28},
+      {"year": 2011, "serotype": "DENV-4", "proportion": 12},
+      {"year": 2012, "serotype": "DENV-1", "proportion": 28},
+      {"year": 2012, "serotype": "DENV-2", "proportion": 35},
+      {"year": 2012, "serotype": "DENV-3", "proportion": 25},
+      {"year": 2012, "serotype": "DENV-4", "proportion": 12},
+      {"year": 2013, "serotype": "DENV-1", "proportion": 45},
+      {"year": 2013, "serotype": "DENV-2", "proportion": 28},
+      {"year": 2013, "serotype": "DENV-3", "proportion": 18},
+      {"year": 2013, "serotype": "DENV-4", "proportion": 9},
+      {"year": 2014, "serotype": "DENV-1", "proportion": 62},
+      {"year": 2014, "serotype": "DENV-2", "proportion": 18},
+      {"year": 2014, "serotype": "DENV-3", "proportion": 12},
+      {"year": 2014, "serotype": "DENV-4", "proportion": 8},
+      {"year": 2015, "serotype": "DENV-1", "proportion": 58},
+      {"year": 2015, "serotype": "DENV-2", "proportion": 20},
+      {"year": 2015, "serotype": "DENV-3", "proportion": 14},
+      {"year": 2015, "serotype": "DENV-4", "proportion": 8},
+      {"year": 2016, "serotype": "DENV-1", "proportion": 48},
+      {"year": 2016, "serotype": "DENV-2", "proportion": 30},
+      {"year": 2016, "serotype": "DENV-3", "proportion": 14},
+      {"year": 2016, "serotype": "DENV-4", "proportion": 8},
+      {"year": 2017, "serotype": "DENV-1", "proportion": 35},
+      {"year": 2017, "serotype": "DENV-2", "proportion": 42},
+      {"year": 2017, "serotype": "DENV-3", "proportion": 15},
+      {"year": 2017, "serotype": "DENV-4", "proportion": 8},
+      {"year": 2018, "serotype": "DENV-1", "proportion": 25},
+      {"year": 2018, "serotype": "DENV-2", "proportion": 50},
+      {"year": 2018, "serotype": "DENV-3", "proportion": 18},
+      {"year": 2018, "serotype": "DENV-4", "proportion": 7},
+      {"year": 2019, "serotype": "DENV-1", "proportion": 20},
+      {"year": 2019, "serotype": "DENV-2", "proportion": 55},
+      {"year": 2019, "serotype": "DENV-3", "proportion": 18},
+      {"year": 2019, "serotype": "DENV-4", "proportion": 7}
+    ]
+  },
+  "mark": {"type": "area"},
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": "Year",
+      "axis": {"labelAngle": 0}
+    },
+    "y": {
+      "field": "proportion",
+      "type": "quantitative",
+      "title": "Proportion (%)",
+      "stack": "normalize",
+      "axis": {"format": ".0%"}
+    },
+    "color": {
+      "field": "serotype",
+      "type": "nominal",
+      "title": "Serotype",
+      "scale": {
+        "domain": ["DENV-1", "DENV-2", "DENV-3", "DENV-4"],
+        "range": ["#B84203", "#F4A261", "#2A9D8F", "#264653"]
+      }
+    },
+    "tooltip": [
+      {"field": "year", "type": "ordinal", "title": "Year"},
+      {"field": "serotype", "type": "nominal", "title": "Serotype"},
+      {"field": "proportion", "type": "quantitative", "title": "Proportion (%)", "format": ".0f"}
+    ]
+  }
+}

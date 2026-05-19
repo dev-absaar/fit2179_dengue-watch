@@ -1,0 +1,74 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 320,
+  "title": {
+    "text": "Rainfall vs. Dengue — The Monthly Rhythm",
+    "subtitle": "Dengue cases (2010) overlap with high-rainfall months — stagnant water breeds Aedes mosquitoes",
+    "fontSize": 15,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#6B6B6B",
+    "anchor": "start",
+    "font": "DM Serif Display"
+  },
+  "data": {
+    "url": "data/monthly_rain_avg.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "color": "#ADE8F4",
+        "opacity": 0.7
+      },
+      "encoding": {
+        "x": {
+          "field": "month_num",
+          "type": "ordinal",
+          "title": "Month",
+          "axis": {
+            "labelExpr": "['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][datum.value - 1]"
+          }
+        },
+        "y": {
+          "field": "avg_monthly_rain",
+          "type": "quantitative",
+          "title": "Total Rainfall (mm)",
+          "axis": {"titleColor": "#0077B6"}
+        },
+        "tooltip": [
+          {"field": "month", "type": "nominal", "title": "Month"},
+          {"field": "avg_monthly_rain", "type": "quantitative", "title": "Avg Monthly Rainfall (mm)", "format": ","},
+          {"field": "dengue_2010", "type": "quantitative", "title": "Dengue Cases (2010)", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "color": "#B84203",
+        "strokeWidth": 2.5,
+        "point": {"color": "#B84203", "size": 60}
+      },
+      "encoding": {
+        "x": {
+          "field": "month_num",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "dengue_2010",
+          "type": "quantitative",
+          "axis": {
+            "title": "Dengue Cases",
+            "titleColor": "#B84203",
+            "orient": "right"
+          },
+          "scale": {"zero": true}
+        }
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {"y": "independent"}
+  }
+}

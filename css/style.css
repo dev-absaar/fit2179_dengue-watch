@@ -1,0 +1,373 @@
+/* ============================================
+   DENGUE WATCH — STYLESHEET
+   FIT2179 Data Visualisation 2
+   ============================================ */
+
+/* --- Colour palette (colour-blind safe) ---
+   Sequential: light → dark using orange-brown scale
+   Tested for deuteranopia, protanopia, and tritanopia
+   Rain uses blue that is distinct from the warm dengue palette
+   ============================================ */
+:root {
+    --dengue-low: #FEE8C8;
+    --dengue-mid: #E6850E;
+    --dengue-high: #B84203;
+    --dengue-critical: #7F2704;
+    --rain-blue: #2171B5;
+    --text-dark: #212121;
+    --text-body: #424242;
+    --text-muted: #757575;
+    --text-light: #9E9E9E;
+    --bg-page: #FAFAFA;
+    --bg-white: #FFFFFF;
+    --bg-alt: #F5F0EB;
+    --border: #E0E0E0;
+    --accent: #B84203;
+}
+
+/* --- Reset --- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Base --- */
+body {
+    font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--text-body);
+    background-color: var(--bg-page);
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: 600;
+}
+
+/* --- Page container --- */
+.page-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ============================================
+   HEADER / HERO
+   ============================================ */
+.hero {
+    text-align: left;
+    padding: 72px 0 48px;
+}
+
+.hero-inner {
+    max-width: 720px;
+}
+
+.hero-tag {
+    display: inline-block;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--bg-white);
+    background: var(--dengue-high);
+    padding: 6px 16px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+}
+
+.hero-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 32px;
+}
+
+.hero-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--dengue-high);
+    border-radius: 2px;
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+.section {
+    padding: 56px 0;
+    border-top: 1px solid var(--border);
+}
+
+.section--alt {
+    background-color: var(--bg-alt);
+    margin-left: -24px;
+    margin-right: -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.section-header {
+    margin-bottom: 28px;
+}
+
+.section-number {
+    display: inline-block;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--text-dark);
+    line-height: 1.25;
+}
+
+/* ============================================
+   NARRATIVE TEXT
+   ============================================ */
+.narrative {
+    max-width: 720px;
+    margin-bottom: 32px;
+}
+
+.narrative p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-body);
+    margin-bottom: 16px;
+}
+
+.narrative p:last-child {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   STAT CARDS
+   ============================================ */
+.stat-row {
+    margin-bottom: 32px;
+}
+
+.stat-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 16px;
+    text-align: left;
+    margin: 0 8px 16px 0;
+    transition: box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.stat-card--danger {
+    border-top: 3px solid var(--dengue-critical);
+}
+
+.stat-card--warning {
+    border-top: 3px solid var(--dengue-mid);
+}
+
+.stat-number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--dengue-critical);
+    line-height: 1.1;
+    margin-bottom: 6px;
+}
+
+.stat-card--warning .stat-number {
+    color: var(--dengue-high);
+}
+
+.stat-label {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
+/* ============================================
+   CHART BLOCKS
+   ============================================ */
+.chart-block {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px 24px;
+    margin-bottom: 24px;
+}
+
+.chart-block--hero {
+    padding: 32px 28px;
+    border: 1px solid var(--dengue-mid);
+}
+
+.chart-label {
+    margin-bottom: 16px;
+}
+
+.chart-title {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.3;
+    margin-bottom: 4px;
+}
+
+.chart-subtitle {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.chart-embed {
+    width: 100%;
+    margin: 8px 0;
+}
+
+.chart-source {
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--text-light);
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+    line-height: 1.5;
+}
+
+/* --- Side-by-side chart pairs --- */
+.chart-pair {
+    margin-bottom: 24px;
+}
+
+.chart-pair .chart-block {
+    margin: 0 8px 16px 0;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    padding: 48px 0 64px;
+    border-top: 1px solid var(--border);
+    margin-top: 8px;
+}
+
+.footer-block {
+    padding-right: 24px;
+    margin-bottom: 24px;
+}
+
+.footer-heading {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-list li {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 2;
+}
+
+.footer-text {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.footer-author {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-body);
+    margin-bottom: 4px;
+}
+
+.footer-note {
+    font-size: 12px;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .stat-number {
+        font-size: 28px;
+    }
+
+    .chart-block {
+        padding: 20px 16px;
+    }
+
+    .section--alt {
+        margin-left: -16px;
+        margin-right: -16px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .page-container {
+        padding: 0 16px;
+    }
+}

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 320,
+  "title": {
+    "text": "Dengue Cases by State and Year",
+    "subtitle": "Darker = more cases. Selangor's dark column shows sustained, year-on-year pressure.",
+    "fontSize": 15,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#6B6B6B",
+    "anchor": "start",
+    "font": "DM Serif Display"
+  },
+  "data": {
+    "url": "data/dengue_heatmap.csv"
+  },
+  "transform": [
+    {"filter": "datum.cases > 0"},
+    {"filter": "datum.state !== 'Kedah' && datum.state !== 'Perlis' && datum.state !== 'Melaka' && datum.state !== 'Terengganu' && datum.state !== 'Labuan'"}
+  ],
+  "mark": {"type": "rect", "stroke": "white", "strokeWidth": 1},
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": "Year",
+      "axis": {"labelAngle": -45}
+    },
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "title": null,
+      "sort": {"field": "cases", "order": "descending"}
+    },
+    "color": {
+      "field": "cases",
+      "type": "quantitative",
+      "title": "Dengue Cases",
+      "scale": {
+        "scheme": "orangered",
+        "type": "sqrt"
+      },
+      "legend": {
+        "title": "Cases",
+        "orient": "right"
+      }
+    },
+    "tooltip": [
+      {"field": "state", "type": "nominal", "title": "State"},
+      {"field": "year", "type": "ordinal", "title": "Year"},
+      {"field": "cases", "type": "quantitative", "title": "Cases", "format": ","},
+      {"field": "rate", "type": "quantitative", "title": "Rate per 100,000", "format": ".1f"}
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 340,
+  "title": {
+    "text": "Who Bears the Burden? Population vs. Dengue Rate",
+    "subtitle": "Bubble size = total cases. Selangor is large AND high-rate — a double burden.",
+    "fontSize": 15,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#6B6B6B",
+    "anchor": "start",
+    "font": "DM Serif Display"
+  },
+  "data": {
+    "url": "data/dengue_bubble.csv"
+  },
+  "transform": [
+    {"filter": "datum.avg_population > 0 && datum.incidence_per100k > 0"}
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "opacity": 0.75,
+        "stroke": "white",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "avg_population",
+          "type": "quantitative",
+          "title": "Average Population (2010–2023)",
+          "axis": {"format": ",.0f"},
+          "scale": {"zero": false}
+        },
+        "y": {
+          "field": "incidence_per100k",
+          "type": "quantitative",
+          "title": "Annual Incidence Rate (per 100,000)",
+          "scale": {"zero": true}
+        },
+        "size": {
+          "field": "total_cases",
+          "type": "quantitative",
+          "title": "Total Cases",
+          "scale": {"range": [80, 3000]}
+        },
+        "color": {
+          "field": "incidence_per100k",
+          "type": "quantitative",
+          "scale": {"scheme": "orangered"},
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "total_cases", "type": "quantitative", "title": "Total Cases (2010–2023)", "format": ","},
+          {"field": "incidence_per100k", "type": "quantitative", "title": "Rate per 100,000/yr", "format": ".1f"},
+          {"field": "avg_population", "type": "quantitative", "title": "Avg Population", "format": ",.0f"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "dy": -14,
+        "fontSize": 11,
+        "fontWeight": 600,
+        "color": "#424242"
+      },
+      "encoding": {
+        "x": {"field": "avg_population", "type": "quantitative"},
+        "y": {"field": "incidence_per100k", "type": "quantitative"},
+        "text": {"field": "state", "type": "nominal"}
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 350,
+  "data": {
+    "url": "data/dengue_annual_national.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "area",
+        "color": "#FEE8C8",
+        "line": {"color": "#B84203", "strokeWidth": 2.5},
+        "opacity": 0.4
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {"labelAngle": 0}
+        },
+        "y": {
+          "field": "cases",
+          "type": "quantitative",
+          "title": "Dengue cases",
+          "axis": {"format": ",.0f"}
+        }
+      }
+    },
+    {
+      "mark": {"type": "circle", "size": 60, "color": "#B84203"},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "cases", "type": "quantitative"},
+        "tooltip": [
+          {"field": "year", "type": "ordinal", "title": "Year"},
+          {"field": "cases", "type": "quantitative", "title": "Cases", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "dy": -15, "fontSize": 11, "fontWeight": 600, "color": "#7F2704"},
+      "transform": [
+        {"filter": "datum.year == 2015 || datum.year == 2019 || datum.year == 2021"}
+      ],
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "cases", "type": "quantitative"},
+        "text": {"field": "cases", "type": "quantitative", "format": ","}
+      }
+    },
+    {
+      "mark": {"type": "text", "dy": -30, "fontSize": 10, "color": "#757575"},
+      "transform": [{"filter": "datum.year == 2015"}],
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "cases", "type": "quantitative"},
+        "text": {"value": "Record outbreak"}
+      }
+    },
+    {
+      "mark": {"type": "text", "dy": -30, "fontSize": 10, "color": "#757575"},
+      "transform": [{"filter": "datum.year == 2021"}],
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "cases", "type": "quantitative"},
+        "text": {"value": "COVID lockdowns"}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"grid": true, "gridColor": "#F0F0F0"}
+  }
+}
